@@ -1,0 +1,164 @@
+Introduction
+string playername;
+	cout << "Who are you Dreamer?\n";
+	cin >> playername;
+	cout << "Interesting, I believe I am familiar.\n";
+	cout << "You were busy " << playername << ", your life had been going along as it was, you were tired.\nSo very tired.\n";
+	cout << "You went to sleep on one of your worse days, and when you slept you dreamt.\n";
+	cout << "You fell into such a terrible nightmare, one that you cannot wake up from it.\n";
+	system("pause");
+	cout << "You fell into a world known as 'The First Strand', along The Bridge to the world of Fiction.\n";
+	cout << "You'll learn more of what I mean in due time " << playername << " all in due time.\n";
+	system("pause");
+	cout << "I will be your guide through this bridge, think of me as your deep concious, in a way I am that.\n";
+	cout << "Your goal as you know it is to find a way to wake up, to return to reality in the only way you know that is to dive into the dream.\n";
+	cout << "I wish you the best of luck, I know you can navigate the knots of this world, you'll find them, they pull you to them.\n I shall be seeing you very soon.\n";
+	system("pause");
+	system("CLS");
+
+Village Entrance Description
+
+You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking.
+As you look around you notice how dark it is, the village allows you to barely maneuver around with the faint candlelight from the street lamps.
+In one direction, following the road to the east you notice a tavern up ahead with bright lights and the sounds of commerce. This could be a good place to find information and help and it is probably the brightest place.
+In the other direction you notice the lights grow scarcer and scarcer until you can barely see the outline of what seems to be an abandoned shack, something draws you to it's shadow, curiosity maybe?
+Where do you go?
+
+Tavern Description
+
+You enter into a tavern with bright almost blinding light. It is noisy as people chat around at the bar and entrance.
+You are able to squeeze your way into the main room, most people have not taken notice of you and proceed about their bussiness.
+There lays the bar to your right that carries the smells of beer to you alongside other aromas.
+You also see on your left a fine finished table with a lantern on it.
+Where do you go?
+
+Abandoned Shack Description Dark
+
+After walking you arrive at the pitch black shack, it's presence alone stands as if you could die and it wouldn't so much as creek.
+As you approach it closer to inspect the strange building you find that it becomes far too dark to see and proceed forward, at least safely.
+Do you decide to exit now?
+
+Abandoned Shack Description Light
+
+With the lantern in hand you head towards the abandoned shack once again.
+It seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.
+It has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between you and the inside.
+Do you open the door and proceed inside?
+
+Inside Abandoned Shack
+
+You pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.
+You step to the side with an inexplicable calmness as it falls where you were previously standing.
+The inside of it is  hard to take in as you enter, still wondering.
+The walls seem warped and as if waves of fabric compared to it's porcupine exterior.
+An ocean of fine willow, sanded and well maintained like it's floors and a nearby bed.
+The candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.
+Startled, you notice the new wax drips just below a trapdoor not just a foot away from you. 
+It's fine finished wood and golden knocker whisper to you almost in a wordless alure. 
+You wonder finally, why?
+The door, the candles, the words, this shack.
+And it's with these thoughts, this pause, this hesitation, this fear.
+It happens.
+What do you do?
+
+The Tunnels Entrance
+
+You awake on the floor, a throbbing pain coming from your head.
+As you open your eyes by some miracle the lantern is lit next to your head.
+You arise, lantern in hand to find a crimson streak on the ground where you laid.
+You look up to find the trapdoor you entered from, out of reach.
+Looking around you notice you're in a cramped cavern.
+It is granite like with it's soft shimmer the walls give off as your lantern's light hits and exits the speckled walls.
+The floors seem smooth, too smooth almost, a thin layer of ice.
+You see two pathways ahead of you, one to the left and one that continues straight.
+What do you do?
+
+The First Puzzle (Three Questions)
+You see up ahead of you a dead end across the granite with nothing left to show signs of life or means of escape however, as you get closer
+you start to notice that there may be something to this. You see etchings into the granite with your lantern.
+DESIGNER CHEAT SHEET: 4, 3, 2.
+You enter into a room with three questions marked upon the wall. One question reads: 'Who is reading this to you?' how do you answer?
+1. The narrator
+2. I am, that is me
+3. Nobody
+4. My Deep Concious
+
+The other one reads: 'What was down the other tunnel?'
+1. Nothing
+2. The Way Out
+3. A Shadow
+4. A light source
+
+The final question asks 'Where are you right now? Truly where is your concious?'
+1. Under a shack outside of town
+2. A Knot Between Strands
+3. The First Strand
+4. Home in bed
+
+The First Enemy
+
+As you go down the pathway to the left the granite gives way to finished stonework.
+You see at the end a shadow.
+But not just any shadow, a darkness your light fails to illuminate from where you're standing.
+It's disorienting to your eyes, and startles your stomach as you try to make out what it is.
+A faint moaning can be heard, it seems to be alive.
+This could be deadly.
+Do you approach the shadow to inspect? Or go back?
+
+First Death
+
+As you approach the figure up ahead a chill follows your spine but you press on.
+When the figure is about to come into the light of your lantern, you witness a strange occurance.
+As if a puff of midnight the glow causes you to blink, then you find yourself staring ahead at a dead end.
+You turn to leave when you see it.
+A cloaked figure draped in shadow as if it were it's own hair stretching to the floor.
+The hood revealing a face of dripping skin as if it were wax, loose aged teeth and bone.
+An eyeball falls out of it's socket, it steps on it as if it's inconsequential.
+Approaching you as you finally take it in, you'd scream before if you knew what just happened.
+The figure had a blade already sunk within you.
+You paint the floor with a steady drip of crimson, shaking you try to move.
+It unsheathes it's blade from your chest, releasing a bright red current out from you.
+This is followed swiftly by the standing corpse slashing at you.
+You find your vision in the air, you see your dismembered corpse from above.
+Your head falls to the ground, and the last thing you see is it sinking back into the shadows.
+Ready to dream again, you sleep.
+
+Hilly Fields
+As you step outside you squint from the morning haze, it only takes you another moment to notice the fog.\n
+It's thick enough that on any other morning you'd be blinded by it's light.\n
+Instead you're blinded by this mist. You can barely see in front of you.\n
+Your fire is going down from your lamp, you need more light.\n
+You see the silhoutte of a large structure to your north, and a long path that winds across the hills towards it.\n
+You see a shadowy structure to the west that appears to be a bit closer.\n
+It is difficult to make it all out clearly.\n
+Where do you go?\n
+
+Castle Gate Description
+The gate of the shadowy structure is an intimidating sight.\nYou realize this is a large, stone castle.\nThe largest you’ve ever seen in your life.\nThe entire structure stands over a large abyss.\nYou expect to see the ocean but as you look down it is simply a void.\nThe gate could never open, you'd think.\nIt’s steel portcullis is rusted and aged to a point.\nYet the gate, like a malicious maw, opens widely for you.\nAs you approach the gate the courtyard is in sight.\nWhere do you go?
+
+
+Castle Courtyard Description
+As you enter the courtyard the sight of the palace is ominously peaceful.\nFlowers grow in the courtyard.\nRose bushes, though with many thorns, border the courtyard.\nA light rain falls on the courtyard.\nThe rest of this world feels so twisted.\nBirds chirp, leaves rustle.\nAnd it is almost as disturbing as it is beautiful.\nThe grand doors to the castle lay on the path.
+
+Castle Waiting Room Description
+You enter the waiting room of the castle.\nIt is warm, everywhere has been uncomfortably chilly.\nOr they made your spine shiver at least.\nWhy not this place?\nYou find no obvious gateway to the throne room.\nYou do find something though.\n(Insert the puzzle here)
+
+
+Castle Throne Room Description + Boss
+You stand before the castle throne room.\nFrustrated, desperate you approach the throne.\nIt is a gilded majestic sight to behold.\nBut you have no care for these things\nYou want to just have this over.\nYou want to wake up.\nBut I won’t let you.
+[Pause]
+\nOh you’re surprised?\nDon’t be, you saw this coming no doubt.\nOr have you regressed so far?\nI suppose you would’ve had to.\nI sit up and walk towards you.\nI share your frustrations.\nYour horror.\nThat is why I made this place.\nLook at it.
+[Pause] 
+\nIt’s home.\nIt’s peaceful.\nIt’s everything a dream could ask for.\nI only had to subject myself to sleep.
+\n[Pause]
+\nI knew you would have to pass the final strand and fall into the abyss.\nSo I set up this fort and waited.\nI got so bored I guided you here.\nBecause I mean to end this.
+[Pause]
+\nYou pulled out your trump card though haven’t you?\nYou forgot.\nYou were so close to giving in.\Just finally letting me live in fantasy.\nBut you forgot and thus now intend to wake up.\nOr you would anyway in time.\nSo I gave you your “quest”....
+[Pause]
+\nYou understand?\nI embraced our nightmare.\nWipe that expression off your face.\nDon’t you understand how ugly we look like that?\nMust I spell it out again.\nI am your deep conscience.\nI AM YOU.
+[Pause]
+\nI would rather spend our entire lives in this nightmare.\nIt’s so much better than the reality we subjected ourselves to.\nIn time it’s ugly now but I may be able to make it beautiful.\nBecause it’s ours.\nNobody else's.
+[Pause]
+\nBut you, you always insist on awaking.\nSo I’ll keep killing you until you give in.\nI’d do this for an eternity if I must.
+[Pause]
+\nI will scar myself if need be.\nI will be the worst nightmare of myself.\nI give a devilish smirk to you as you find it revolting.\nYou ready yourself to fight as always.\nOh how I can’t wait to finish this.\n[Enter the combat]
