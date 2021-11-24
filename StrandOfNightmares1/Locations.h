@@ -41,5 +41,6 @@ public:
 	Locations(string, string, string, string, string, string, string, string);
 	void CheckLocation(Locations[], string, int);
 	void LocationActions(Locations[], Inventory&, int);
+	void LocationLook(Locations[], Inventory&, int);
 };
 #endif

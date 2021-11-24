@@ -87,6 +87,8 @@ void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& Pl
 	case 3:
 		PlayerInventory.DisplayInventory();
 		break;
+	case 4:
+		PlayerLocation.LocationLook(AllLocations, PlayerInventory, AllLocationsSize);
 	case 5:
 		SaveGame(PlayerInventory, PlayerLocation);
 		break;
