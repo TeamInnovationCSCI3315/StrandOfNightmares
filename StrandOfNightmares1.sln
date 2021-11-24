@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StrandOfNightmares1", "StrandOfNightmares1\StrandOfNightmares1.vcxproj", "{CA04E8A9-4937-48C2-8ACD-FBA1DA8D7244}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TeamInnovationUnitTests", "TeamInnovationUnitTests\TeamInnovationUnitTests.vcxproj", "{F59C8A1F-C6E3-4D1D-9C21-DB35A5252BDF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TeamInnovationUnitTests", "StrandOfNightmares1\TeamInnovationUnitTests\TeamInnovationUnitTests.vcxproj", "{F59C8A1F-C6E3-4D1D-9C21-DB35A5252BDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
