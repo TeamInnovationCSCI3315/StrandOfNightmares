@@ -416,7 +416,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					{
 						cout << "You lunge towards the thief with your sword, stabbing him straight through his twisted heart.\n He doubles back in pain, slumping to the ground like a sack of grain, and like one he spills to the ground. Instead of grain, he spills out blood from his wound and mouth.\n He is now dead, his ill-gotten goods are now yours.\n Unfortunately, you have little use for most of his wares, except for a small stash of lamp oil. You take it hastily.";
 						taskDone[10] = true;
-						playerinventory.AddItem("Lamp Oil");
+						playerinventory.AddItem("Lamp-oil");
 						break;
 					}
 					else if (use == "Lantern")
@@ -465,7 +465,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 	}
 	else if (locationName == "Winding Path")
 	{
-		if (playerinventory.SearchInventory("Lamp Oil"))
+		if (playerinventory.SearchInventory("Lamp-oil"))
 		{
 			northDoor = "Castle Gate";
 		}
@@ -542,16 +542,9 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	}
 	else if (locationName == "Village Garden")
 	{
-		if (!playerinventory.SearchInventory("Sage"))
-		{
+
 			locationDesc = "You enter the garden.\nIt is full of fresh smelling herbs, but one scent is particularly strong. \nThere is flora all around you.\n\n";// [1] Admire garden \n[2] Pick herb \n[3] Exit\n";
 			cout << locationDesc;
-		}
-		if (playerinventory.SearchInventory("Sage"))
-		{
-			cout << locationDesc;
-		}
-
 
 	}
 	else if (locationName == "Tavern")
@@ -632,7 +625,7 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	}
 	else if (locationName == "Winding Path")
 	{
-		if (playerinventory.SearchInventory("Lamp Oil"))
+		if (playerinventory.SearchInventory("Lamp-oil"))
 		{
 			locationDesc = "Temp Winding Path Description";
 			cout << locationDesc;
