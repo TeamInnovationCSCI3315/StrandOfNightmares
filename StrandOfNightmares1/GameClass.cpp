@@ -42,37 +42,25 @@ void GameClass::Quit()
 	}
 }
 
-void GameClass::TunnelPuzzle()
+bool GameClass::TunnelPuzzle()
 {
+	/*
+		Displays puzzle questions
+		If answer is right, move to next question. If all questions are complete, return true. Else, return false.
+		*/
 	int playerchoice = 0;
-		cout << "Solve this puzzle, unlock the next room\n Press [5] to exit" << endl;
-		cout << "Who is reading this to you?" << endl;
-		cout << "-----------------" << endl;
-		cout << "1.) The Narrator " << endl;
-		cout << "2.) I am (me) " << endl;
-		cout << "3.) Nobody " << endl;
-		cout << "4.) Deep Consciousness " << endl;
-
-		while (playerchoice != 4)
-		{
-			cout << "Choose your answer: ";
-			playerchoice = validate.inputValidation();
-			cout << endl;
-			if (playerchoice == 4)
-			{
-				cout << "You are correct! Onto the next one..." << endl;
-				break;
-			}
-			else
-			{
-				cout << "You are incorrect! Speak to me again and try my riddles from the beginning." << endl;
-			}
-			//return;
-		}
-
-
-
-
+	cout << "Solve this puzzle, unlock the next room\n" << endl;
+	cout << "Who is reading this to you?" << endl;
+	cout << "-----------------" << endl;
+	cout << "1.) The Narrator " << endl;
+	cout << "2.) I am (me) " << endl;
+	cout << "3.) Nobody " << endl;
+	cout << "4.) Deep Consciousness " << endl;
+	cout << "Choose your answer: ";
+	playerchoice = validate.inputValidation();
+	if (playerchoice == 4)
+	{
+		cout << "You are correct! Onto the next one..." << endl;
 		playerchoice = 0;
 
 		cout << "What is down the other tunnel path?" << endl;
@@ -81,47 +69,31 @@ void GameClass::TunnelPuzzle()
 		cout << "2.) The way out " << endl;
 		cout << "3.) A shadow " << endl;
 		cout << "4.) A light source " << endl;
+		playerchoice = validate.inputValidation();
 
-		while (playerchoice != 3)
+		if (playerchoice == 3)
 		{
-			cout << "Choose your answer: ";
+			cout << "You are correct! Onto the next one..." << endl;
+			playerchoice = 0;
+
+			cout << "Where are you right now? Truly, " << endl;
+			cout << "-----------------" << endl;
+			cout << "1.) Shack outside of town " << endl;
+			cout << "2.) A knot between strands " << endl;
+			cout << "3.) The first strand " << endl;
+			cout << "4.) Home, in bed " << endl;
 			playerchoice = validate.inputValidation();
-			cout << endl;
-			if (playerchoice == 3)
-			{
-				cout << "You are correct! Onto the next one..." << endl;
-				break;
-			}
-			else
-			{
-				cout << "You are incorrect! Speak to me again and try my riddles from the beginning." << endl;
-
-			}
-		}
-		playerchoice = 0;
-
-		cout << "Where are you right now? Truly, " << endl;
-		cout << "-----------------" << endl;
-		cout << "1.) Shack outside of town " << endl;
-		cout << "2.) A knot between strands " << endl;
-		cout << "3.) The first strand " << endl;
-		cout << "4.) Home, in bed " << endl;
-
-		while (playerchoice != 2)
-		{
-			cout << "Choose your answer: ";
-			playerchoice = validate.inputValidation();
-			cout << endl;
 			if (playerchoice == 2)
 			{
-				cout << "You are correct! Onto the next one..." << endl;
-				break;
-			}
-			else
-			{
-				cout << "You are incorrect! Speak to me again and try my riddles from the beginning." << endl;
+				cout << "You are correct!" << endl;
+				playerchoice = 0;
+				return true;
 			}
 		}
+	}
+	cout << "You are incorrect! Speak to me again and try my riddles from the beginning." << endl;
+	return false;
+
 }
 void GameClass::FirstDeath()
 {
