@@ -1,4 +1,2 @@
-Sage
 Lantern
 Sword
-Lamp Oil

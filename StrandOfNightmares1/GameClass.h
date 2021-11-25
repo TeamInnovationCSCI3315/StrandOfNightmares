@@ -22,7 +22,7 @@ public:
 //	void Location();
 	GameClass();
 	void Quit();
-	void TunnelPuzzle();
+	bool TunnelPuzzle();
 	void FirstDeath();
 	string UseMenu(Inventory, string);
 
