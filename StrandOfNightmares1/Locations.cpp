@@ -310,13 +310,20 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			cin >> playerchoice;
 			if (playerchoice == "Y" || playerchoice == "y")
 			{
-				Puzzle.TunnelPuzzle();
-				cout << "A Door Appears to open from within the wall in front of you.\n";
-				northDoor = "Staircase Room";
-				taskDone[5] = true;
+				if (Puzzle.TunnelPuzzle())
+				{
+					cout << "A Door Appears to open from within the wall in front of you. Would you like to go through it?\n";
+					northDoor = "Staircase Room";
+					taskDone[5] = true;
+				}
+			}
+			else
+			{
+				northDoor = "";
+				taskDone[5] = false;
 			}
 		}
-		if (taskDone[5])
+		else if (taskDone[5])
 		{
 			northDoor = "Staircase Room";
 		}
