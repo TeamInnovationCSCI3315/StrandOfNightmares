@@ -7,6 +7,7 @@
 #include "GameClass.h"
 #include "Inventory.h"
 #include "InputValidation.h"
+#include "FinalBoss.h"
 using namespace std;
 
 class Locations
@@ -26,6 +27,7 @@ private:
 	Inventory LocationInventory;
 	InputValidation validate;
 
+
 public:
 	string getRoomObject();
 	string getNorthDoor();
@@ -40,7 +42,7 @@ public:
 	void setLocationDesc(string);
 	Locations(string, string, string, string, string, string, string, string);
 	void CheckLocation(Locations[], string, int);
-	void LocationActions(Locations[], Inventory&, int);
+	void LocationActions(Locations[], Inventory&, int, FinalBoss&);
 	void LocationLook(Locations[], Inventory&, int);
 };
 #endif

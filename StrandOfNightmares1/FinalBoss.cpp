@@ -13,6 +13,9 @@ FinalBoss::FinalBoss()
 {
 	
 }
+/*
+Displays available items to use against boss to player
+*/
 void FinalBoss::DisplayPlayerOptions()
 {
 	random_shuffle(playerOptions.begin(), playerOptions.end());
@@ -21,6 +24,10 @@ void FinalBoss::DisplayPlayerOptions()
 		cout << i + 1 << ". " << playerOptions[i] << endl;
 	}
 }
+/*
+Final Boss Fight. If boss is defeated, returns true.
+Randomly chooses an option of what the boss will use against the player, introducing a randomness to the game so it cant be beat unless the players learn the counters.
+*/
 bool FinalBoss::IsFinalBossBeaten()
 {
 	
@@ -36,7 +43,7 @@ bool FinalBoss::IsFinalBossBeaten()
 		cout << "They are about to use: " << "\033[1;33m" << finalBossOptions[tempvalue][0] << "\033[0m" << ". What will you do? Choose an option below: " << endl;
 		DisplayPlayerOptions();
 		input=Validate.inputValidation();
-		while (input > 5)
+		while (input > playerOptions.size())
 		{
 			cout << "Invalid selection, try again: \n";
 			input = Validate.inputValidation();
@@ -54,4 +61,15 @@ bool FinalBoss::IsFinalBossBeaten()
 		i++;
 	}
 	return true;
+}
+/*
+Functions to decide if the game is over. If boss is defeats the player, the game will be over.
+*/
+bool FinalBoss:: IsGameOver()
+{
+	return GameOver;
+}
+void FinalBoss::setGameOver(bool i)
+{
+	GameOver = i;
 }

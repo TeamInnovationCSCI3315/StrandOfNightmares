@@ -5,6 +5,7 @@
 #include "UI.h"
 #include "Locations.h"
 #include "Inventory.h"
+#include "FinalBoss.h"
 #include <iostream>
 using namespace std;
 /*
@@ -21,6 +22,7 @@ int main()
 	Inventory TunnelInventory;*/
 	Inventory PlayerInventory;
 	GameClass Game;
+	FinalBoss Final;
 	/*
 	Multiple rooms are created Location(Location Name, Location Description, North Room, South Room, East Room, West Room, item within room, object within room: NPC);
 	All will be strings, if there is no value for one, set to ""
@@ -59,17 +61,19 @@ int main()
 	PlayerClass Player();
 		cout << "Game Version 0.4 Save Edition" << endl;
 		// Display Start Screen
-	Interface.DisplayStartScreen(PlayerInventory, PlayerLocation,AllLocations,AllLocationsSize);
-	// Display Introduction
-	// Interface.DisplayIntroduction();
-	while (true) //Will later be switched to !GameOver
-		{
-			// Display interface with options
-			Interface.Menu(AllLocations, PlayerLocation, PlayerInventory, Game, AllLocationsSize);
-			Game.IsGameOver();
+	while (true)
+	{
+		Interface.DisplayStartScreen(PlayerInventory, PlayerLocation,AllLocations,AllLocationsSize);
+		// Display Introduction
+		// Interface.DisplayIntroduction();
+		while (!Final.IsGameOver()) //Will later be switched to !GameOver
+			{
+				// Display interface with options
+				Interface.Menu(AllLocations, PlayerLocation, PlayerInventory, Game, AllLocationsSize, Final);
+			}
+		Final.setGameOver(false);
 
-		}
-	cout << "Thank you for playing!";
+	}
 	system("pause");
 	return 0;
 }

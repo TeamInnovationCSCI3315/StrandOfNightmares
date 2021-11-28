@@ -147,15 +147,15 @@ Do this:
 }
 
 */
-void Locations::LocationActions(Locations TempLocation[], Inventory& playerinventory, int locationsize)
+void Locations::LocationActions(Locations TempLocation[], Inventory& playerinventory, int locationsize, FinalBoss& GameOver)
 {
-
+	
 	int playerchoice = 1;
+	/*
 	if (locationName == "Village Entrance")
 	{
-
-	}
-	else if (locationName == "Abandoned Shack")
+	}*/
+	if (locationName == "Abandoned Shack")
 	{
 		if (playerinventory.SearchInventory("Lantern"))
 		{
@@ -527,7 +527,11 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			}
 			else
 			{
-				cout << endl << "\033[1;31m" << "You have been defeated\n" << "\033[0m";
+				cout << endl << "\033[1;31m" << "You have been defeated\n" << endl << endl << "Game Over" << endl << endl << "\033[0m";
+
+				system("pause");
+				system("CLS");
+				GameOver.setGameOver(true);
 			}
 		}
 
@@ -625,7 +629,7 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	{
 
 		GameClass Game;
-	STAIRS:
+
 		if (!taskDone[7])
 		{
 			cout << "A ghostly presence is in the room. A wraith appears in front of you\n";

@@ -16,7 +16,6 @@ private:
 	bool GameOver=false;
 
 
-	string playerLocation;
 	InputValidation validate;
 	
 public:
