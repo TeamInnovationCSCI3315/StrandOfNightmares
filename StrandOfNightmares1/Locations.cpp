@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <string>
 #include "InputValidation.h"
+#include "FinalBoss.h"
 
 using namespace std;
 /*
@@ -482,6 +483,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			northDoor = "";
 		}
 	}
+
 	else if (locationName == "Castle Gate")
 	{
 
@@ -496,24 +498,42 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 	}
 	else if (locationName == "Castle Throne Room")
 	{
-		cout << "You stand before the castle throne room.\nFrustrated, desperate you approach the throne.\nIt is a gilded majestic sight to behold.\nBut you have no care for these things\nYou want to just have this over.\nYou want to wake up.\nBut I won't let you.";
-		system("pause");
-		cout << "\nOh you're surprised?\nDon't be, you saw this coming no doubt.\nOr have you regressed so far?\nI suppose you would've had to.\nI sit up and walk towards you.\nI share your frustrations.\nYour horror.\nThat is why I made this place.\nLook at it.";
-		system("pause");
-		cout << "\nIt's home.\nIt's peaceful.\nIt's everything a dream could ask for.\nI only had to subject myself to sleep.";
-		system("pause");
-		cout << "\nI knew you would have to pass the final strand and fall into the abyss.\nSo I set up this fort and waited.\nI got so bored I guided you here.\nBecause I mean to end this.";
-		system("pause");
-		cout << "\nYou pulled out your trump card though haven't you?\nYou forgot.\nYou were so close to giving in.\Just finally letting me live in fantasy.\nBut you forgot and thus now intend to wake up.\nOr you would anyway in time.\nSo I gave you your 'quest'....";
-		system("pause");
-		cout << "\nYou understand?\nI embraced our nightmare.\nWipe that expression off your face.\nDon't you understand how ugly we look like that?\nMust I spell it out again.\nI am your deep conscience.\nI AM YOU.";
-		system("pause");
-		cout << "\nI would rather spend our entire lives in this nightmare.\nIt's so much better than the reality we subjected ourselves to.\nIn time it's ugly now but I may be able to make it beautiful.\nBecause it's ours.\nNobody else's.";
-		system("pause");
-		cout << "\nBut you, you always insist on awaking.\nSo I'll keep killing you until you give in.\nI'd do this for an eternity if I must.";
-		system("pause");
-		cout << "\nI will scar myself if need be.\nI will be the worst nightmare of myself.\nI give a devilish smirk to you as you find it revolting.\nYou ready yourself to fight as always.\nOh how I can't wait to finish this.\n[Enter the combat]\n";
+		if (!taskDone[15])
+		{
+			cout << "You stand before the castle throne room.\nFrustrated, desperate you approach the throne.\nIt is a gilded majestic sight to behold.\nBut you have no care for these things\nYou want to just have this over.\nYou want to wake up.\nBut I won't let you.";
+			system("pause");
+			cout << "\nOh you're surprised?\nDon't be, you saw this coming no doubt.\nOr have you regressed so far?\nI suppose you would've had to.\nI sit up and walk towards you.\nI share your frustrations.\nYour horror.\nThat is why I made this place.\nLook at it.";
+			system("pause");
+			cout << "\nIt's home.\nIt's peaceful.\nIt's everything a dream could ask for.\nI only had to subject myself to sleep.";
+			system("pause");
+			cout << "\nI knew you would have to pass the final strand and fall into the abyss.\nSo I set up this fort and waited.\nI got so bored I guided you here.\nBecause I mean to end this.";
+			system("pause");
+			cout << "\nYou pulled out your trump card though haven't you?\nYou forgot.\nYou were so close to giving in.\Just finally letting me live in fantasy.\nBut you forgot and thus now intend to wake up.\nOr you would anyway in time.\nSo I gave you your 'quest'....";
+			system("pause");
+			cout << "\nYou understand?\nI embraced our nightmare.\nWipe that expression off your face.\nDon't you understand how ugly we look like that?\nMust I spell it out again.\nI am your deep conscience.\nI AM YOU.";
+			system("pause");
+			cout << "\nI would rather spend our entire lives in this nightmare.\nIt's so much better than the reality we subjected ourselves to.\nIn time it's ugly now but I may be able to make it beautiful.\nBecause it's ours.\nNobody else's.";
+			system("pause");
+			cout << "\nBut you, you always insist on awaking.\nSo I'll keep killing you until you give in.\nI'd do this for an eternity if I must.";
+			system("pause");
+			cout << "\nI will scar myself if need be.\nI will be the worst nightmare of myself.\nI give a devilish smirk to you as you find it revolting.\nYou ready yourself to fight as always.\nOh how I can't wait to finish this.\n\n";
+			FinalBoss Boss;
+			if (Boss.IsFinalBossBeaten())
+			{
+				system("pause");
+				cout << endl << "\033[1;32m" << "You have defeated the boss\n" << "\033[0m";
+				northDoor = "Wake Up";
+				taskDone[15] = true;
+			}
+			else
+			{
+				cout << endl << "\033[1;31m" << "You have been defeated\n" << "\033[0m";
+			}
+		}
+
 	}
+
+		
 
 	else
 	{
@@ -643,5 +663,10 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 			cout << locationDesc;
 		}
 	}
+	else
+	{
+	cout << locationDesc;
+	}
 }
+
 	

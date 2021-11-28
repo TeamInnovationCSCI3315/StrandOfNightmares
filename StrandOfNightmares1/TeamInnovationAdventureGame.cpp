@@ -36,25 +36,25 @@ int main()
 	Locations MysteriousDoor("Mysterious Door", "You approach the mysterious door you managed to open, you can peel back the slab to head outside it seems.", "", "", "Hilly Fields", "Staircase Room", "","");
 	Locations HillyFields("Hilly Fields", "As you step outside you squint from the morning haze, it only takes you another moment to notice the fog.\nIt's thick enough that on any other morning you'd be blinded by it's light.\nInstead you're blinded by this mist. You can barely see in front of you.\nYour fire is going down from your lamp, you need more light.\nYou see the silhoutte of a large structure to your north, and a long path that winds across the hills towards it.\nYou see a shadowy structure to the west that appears to be a bit closer.\nIt is difficult to make it all out clearly.\nWhere do you go?\n", "Winding Path", "", "Mysterious Door", "Cemetary", "","");
 	Locations Cemetary("Cemetary", "You are in the decrepid cemetary.\n The dates indicate that some of these graves have been here for hundreds of years.\n Most are too weathered to be legible anymore.\n You see a figure walking around, perhaps they are here visiting someone.\n", "", "", "Hilly Fields", "", "","graverobber");
-	Locations WindingPath("Winding Path", "Winding Path Description", "Foggy Structure", "Hilly Fields", "","","","");
+	Locations WindingPath("Winding Path", "Winding Path Description", "", "Hilly Fields", "","","","");
 	Locations CastleGate("Castle Gate", "The gate of the shadowy structure is an intimidating sight.\nYou realize this is a large, stone castle.\nThe largest you’ve ever seen in your life.\nThe entire structure stands over a large abyss.\nYou expect to see the ocean but as you look down it is simply a void.\nThe gate could never open, you'd think.\nIt’s steel portcullis is rusted and aged to a point.\nYet the gate, like a malicious maw, opens widely for you.\nAs you approach the gate the courtyard is in sight.\nWhere do you go?\n", "Castle Courtyard", "Winding Path", "", "", "", "");
 	Locations CastleCourtyard("Castle Courtyard", "As you enter the courtyard the sight of the palace is ominously peaceful.\nFlowers grow in the courtyard.\nRose bushes, though with many thorns, border the courtyard.\nA light rain falls on the courtyard.\nThe rest of this world feels so twisted.\nBirds chirp, leaves rustle.\nAnd it is almost as disturbing as it is beautiful.\nThe grand doors to the castle lay on the path.\n", "Castle Waiting Room", "Castle Gate", "", "", "", "");
 	Locations CastleWaitingRoom("Castle Waiting Room", "You enter the waiting room of the castle.\nIt is warm, everywhere has been uncomfortably chilly.\nOr they made your spine shiver at least.\nWhy not this place?\nYou find no obvious gateway to the throne room.\nYou do find something though.\n(Insert the puzzle here)\n", "Castle Throne Room", "Castle Courtyard", "", "", "", "");
-	Locations CastleThroneRoom("Castle Throne Room", "Castle Throne Room Description+Boss", "Wake Up", "", "", "", "", "");
+	Locations CastleThroneRoom("Castle Throne Room", "Castle Throne Room Description+Boss", "", "", "", "", "", "");
 	Locations PlayerLocation("", "", "", "", "", "", "", "");
 	Locations AllLocations[] = { VillageEntrance , AbandonedShack , Tavern , VillageGarden, Tunnel , MysteriousRoom , LeftTunnelRoom, StaircaseRoom, MysteriousDoor, HillyFields, Cemetary, WindingPath, CastleGate, CastleCourtyard, CastleWaitingRoom, CastleThroneRoom };
 	const int AllLocationsSize = 16;
 	
 	// Player starts at Village Entrance, so their initial location is Village Entrance;
-	PlayerLocation = VillageEntrance;
+	PlayerLocation = CastleThroneRoom;
 	
 	// Testing commands. Replace with desired commands below, comment out above starting location:
-	
-	//PlayerLocation = HillyFields; // Change location to whatever starting area you want
-	/*PlayerInventory.AddItem("Lantern"); // add items you want
+	/*
+	PlayerLocation = HillyFields; // Change location to whatever starting area you want
+	PlayerInventory.AddItem("Lantern"); // add items you want
 	PlayerInventory.AddItem("Sage");
-	PlayerInventory.AddItem("Sword");
-	*/
+	PlayerInventory.AddItem("Sword");*/
+	
 	UI Interface;
 	PlayerClass Player();
 		cout << "Game Version 0.4 Save Edition" << endl;
@@ -66,8 +66,10 @@ int main()
 		{
 			// Display interface with options
 			Interface.Menu(AllLocations, PlayerLocation, PlayerInventory, Game, AllLocationsSize);
+			Game.IsGameOver();
 
 		}
+	cout << "Thank you for playing!";
 	system("pause");
 	return 0;
 }
