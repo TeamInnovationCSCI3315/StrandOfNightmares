@@ -449,6 +449,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			}
 			else if (taskDone[10])
 			{
+				locationDesc = "You are in the decrepid cemetary.\n The dates indicate that some of these graves have been here for hundreds of years.\n Most are too weathered to be legible anymore.\n The thief's body lays before you.\n";
 				cout << "\n\n[1] Inspect the Graves \n[2] Inspect Body\n[3] Leave\n";
 				playerchoice = validate.inputValidation();
 				switch (playerchoice)
@@ -534,6 +535,13 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				GameOver.setGameOver(true);
 
 			}
+		}
+		else
+		{
+			cout << "You stand before the corpse of yourself, finally it's over.\nYou feel the dream fadding from you, the walls of the castle crumble into nothingness as the world around you fades.\nThis fantasy, this illusion, this nightmare, was nothing more than such after all.\nYou stand before the pit of emptiness.\nWaiting.\nWaiting.\nAnd waiting.\nIt too fades, you close your eyes for what seems to be the last time.\nAnd that is when they open, the sun peering through the window, your surroundings familiar to you.\nYou are back in reality.\nFinally after the struggle.\nYou can take on the day knowing that, everything you do is real.\n \n Thank you for waking now go out and face the world.";
+			system("pause");
+			system("CLS");
+			GameOver.setGameOver(true);
 		}
 
 	}
@@ -659,7 +667,7 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	{
 		if (playerinventory.SearchInventory("Lamp-oil"))
 		{
-			locationDesc = "Temp Winding Path Description";
+			locationDesc = "You see northward what seems to be a castle of some sorts, it's shape you're barely able to make out in the distance.\n";
 			cout << locationDesc;
 		}
 		else
