@@ -15,9 +15,9 @@ class FinalBoss
 private:
 	bool GameOver = false;
 	InputValidation Validate;
-	vector<string> playerOptions = { "Counter1","Counter2","Counter3","Counter4","Counter5","Counter6"};
+	vector<string> playerOptions = { "Shield","Dodge","Revolver","Water","Sword","Wall"};
 	string finalBossOptions[6][2] = {
-		{"Weapon1",playerOptions[0]}, {"Weapon2",playerOptions[1]}, {"Weapon3",playerOptions[2]}, {"Weapon4",playerOptions[3]}, {"Weapon5",playerOptions[4]}, {"Weapon6",playerOptions[5]}
+		{"Sword",playerOptions[0]}, {"Pistol",playerOptions[1]}, {"Shield",playerOptions[2]}, {"Firebomb",playerOptions[3]}, {"Dagger",playerOptions[4]}, {"Rifle",playerOptions[5]}
 	};
 public:
 	
