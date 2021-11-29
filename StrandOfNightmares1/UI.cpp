@@ -185,7 +185,6 @@ void UI::SaveGame(Inventory& playerInventory, Locations& playerLocation)
 }
 /*
 LoadGame reads 2 files TeamInnovationSaveInventory.txt, and TeamInnovationSaveLocation.txt, and if found, will set the players location to the location read by the file, and adds previous items to their inventory.
-
 */
 void UI::LoadGame(Inventory& playerInventory, Locations& playerLocation, Locations AllLocations[],int AllLocationsSize)
 {

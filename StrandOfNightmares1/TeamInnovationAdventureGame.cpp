@@ -48,7 +48,7 @@ int main()
 	const int AllLocationsSize = 16;
 	
 	// Player starts at Village Entrance, so their initial location is Village Entrance;
-	PlayerLocation = CastleThroneRoom;
+	PlayerLocation = HillyFields;
 	
 	// Testing commands. Replace with desired commands below, comment out above starting location:
 	/*
@@ -61,8 +61,6 @@ int main()
 	PlayerClass Player();
 		cout << "Game Version 0.4 Save Edition" << endl;
 		// Display Start Screen
-	while (true)
-	{
 		Interface.DisplayStartScreen(PlayerInventory, PlayerLocation,AllLocations,AllLocationsSize);
 		// Display Introduction
 		// Interface.DisplayIntroduction();
@@ -71,9 +69,8 @@ int main()
 				// Display interface with options
 				Interface.Menu(AllLocations, PlayerLocation, PlayerInventory, Game, AllLocationsSize, Final);
 			}
-		Final.setGameOver(false);
-
-	}
-	system("pause");
+		cout << "***********************************************************************************************\n";
+		cout << "\033[1;34m" << "Thank you for playing! You may open the game again to replay it, or start from a previous save!\n" << "\033[0m" << endl;
+		cout << "***********************************************************************************************\n";
 	return 0;
 }

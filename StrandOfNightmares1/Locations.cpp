@@ -522,7 +522,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			{
 				system("pause");
 				cout << endl << "\033[1;32m" << "You have defeated the boss\n" << "\033[0m";
-				northDoor = "Wake Up";
+				//northDoor = "Wake Up";
 				taskDone[15] = true;
 			}
 			else
@@ -532,6 +532,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				system("pause");
 				system("CLS");
 				GameOver.setGameOver(true);
+
 			}
 		}
 
