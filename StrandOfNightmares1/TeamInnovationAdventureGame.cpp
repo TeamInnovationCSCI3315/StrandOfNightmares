@@ -39,26 +39,22 @@ int main()
 	Locations WindingPath("Winding Path", "Winding Path Description", "Foggy Structure", "Hilly Fields", "","","","");
 	Locations CastleGate("Castle Gate", "The gate of the shadowy structure is an intimidating sight.\nYou realize this is a large, stone castle.\nThe largest you’ve ever seen in your life.\nThe entire structure stands over a large abyss.\nYou expect to see the ocean but as you look down it is simply a void.\nThe gate could never open, you'd think.\nIt’s steel portcullis is rusted and aged to a point.\nYet the gate, like a malicious maw, opens widely for you.\nAs you approach the gate the courtyard is in sight.\nWhere do you go?\n", "Castle Courtyard", "Winding Path", "", "", "", "");
 	Locations CastleCourtyard("Castle Courtyard", "As you enter the courtyard the sight of the palace is ominously peaceful.\nFlowers grow in the courtyard.\nRose bushes, though with many thorns, border the courtyard.\nA light rain falls on the courtyard.\nThe rest of this world feels so twisted.\nBirds chirp, leaves rustle.\nAnd it is almost as disturbing as it is beautiful.\nThe grand doors to the castle lay on the path.\n", "Castle Waiting Room", "Castle Gate", "", "", "", "");
-	Locations CastleFoyer("Castle Foyer", "You enter the waiting room of the castle.\nIt is warm, everywhere has been uncomfortably chilly.\nOr they made your spine shiver at least.\nWhy not this place?\nYou find no obvious gateway to the throne room.\nThere are, however, doorways to your left and right. A troll-ish looking guard at the top of a staircase facing north.\n Above the staircase hangs a gigantic, precarious chandelier.\nFollowing the top of the fixture, you see a rope that follows the slant of the ceiling and hangs along the wall. \n", "", "Castle Courtyard", "Castle Gallery", "Castle Hall", "", "");
-	Locations CastleGallery("Castle Gallery", "You are surrounded by wonderful and valuable looking paintings.\nOnly someone with a deep passion for the arts would have such a collection.\n You once again question where you are, and who owns this?\n", "", "", "", "Castle Foyer", "", "");
-	Locations CastleHall("Castle Hall", "You find yourself in a long, empty room. Judging by the massive table and the chairs lined up on either side, you figure that this place once housed great meals... \nBut for whom?\n", "Castle Kitchen", "", "Castle Foyer", "", "", "Rope");
-	Locations CastleKitchen("Castle Kitchen", "You are in a large stone kitchen. \nIt is cold, and feels like a flame hasn't been lit here in ages.\n There is an ancient pot on the stove with something in it.\n ", "", "Castle Hall", "", "", "", "Stove");
+	Locations CastleWaitingRoom("Castle Waiting Room", "You enter the waiting room of the castle.\nIt is warm, everywhere has been uncomfortably chilly.\nOr they made your spine shiver at least.\nWhy not this place?\nYou find no obvious gateway to the throne room.\nYou do find something though.\n(Insert the puzzle here)\n", "Castle Throne Room", "Castle Courtyard", "", "", "", "");
 	Locations CastleThroneRoom("Castle Throne Room", "Castle Throne Room Description+Boss", "Wake Up", "", "", "", "", "");
 	Locations PlayerLocation("", "", "", "", "", "", "", "");
-	Locations AllLocations[] = { VillageEntrance , AbandonedShack , Tavern , VillageGarden, Tunnel , MysteriousRoom , LeftTunnelRoom, StaircaseRoom, MysteriousDoor, HillyFields, Cemetary, WindingPath, CastleGate, CastleCourtyard, CastleFoyer, CastleGallery, CastleHall, CastleKitchen, CastleThroneRoom };
-	const int AllLocationsSize = 19;
+	Locations AllLocations[] = { VillageEntrance , AbandonedShack , Tavern , VillageGarden, Tunnel , MysteriousRoom , LeftTunnelRoom, StaircaseRoom, MysteriousDoor, HillyFields, Cemetary, WindingPath, CastleGate, CastleCourtyard, CastleWaitingRoom, CastleThroneRoom };
+	const int AllLocationsSize = 16;
 	
 	// Player starts at Village Entrance, so their initial location is Village Entrance;
-	PlayerLocation = CastleFoyer;
+	PlayerLocation = VillageEntrance;
 	
 	// Testing commands. Replace with desired commands below, comment out above starting location:
 	
 	//PlayerLocation = HillyFields; // Change location to whatever starting area you want
-	PlayerInventory.AddItem("Lantern"); // add items you want
+	/*PlayerInventory.AddItem("Lantern"); // add items you want
 	PlayerInventory.AddItem("Sage");
 	PlayerInventory.AddItem("Sword");
-	//PlayerInventory.AddItem("Soup");
-	
+	*/
 	UI Interface;
 	PlayerClass Player();
 		cout << "Game Version 0.4 Save Edition" << endl;
