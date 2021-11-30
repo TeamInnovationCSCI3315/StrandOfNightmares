@@ -40,6 +40,7 @@ void Inventory::AddItem(string itemID)
 	inventory.push_back(itemID);
 }
 
+
 bool Inventory::IsInventoryEmpty() {
 	if (inventory.empty()) {
 		return true;
