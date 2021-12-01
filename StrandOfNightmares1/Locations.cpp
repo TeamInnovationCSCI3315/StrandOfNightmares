@@ -391,14 +391,6 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			northDoor = "Mysterious Door";
 		}
 	}
-	else if (locationName == "Mysterious Door")
-	{
-
-	}
-	else if (locationName == "Hilly Fields")
-	{
-
-	}
 	else if (locationName == "Cemetary")
 	{
 		GameClass Game;
@@ -484,20 +476,13 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			northDoor = "";
 		}
 	}
-	else if (locationName == "Castle Gate")
-	{
 
-	}
-	else if (locationName == "Castle Courtyard")
-	{
-
-	}
 	else if (locationName == "Castle Foyer")
 	{
 		
 		while (playerchoice != 4)
 		{
-			if (!playerinventory.SearchInventory("Soup"))
+			if (!taskDone[17])
 			{
 				{
 					cout << "\n[1] Talk to troll \n[2] Inspect chandelier\n[3] Use item\n[4] Leave\n";
@@ -506,7 +491,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					{
 					case 1:
 					{
-						cout << "You approach the troll with peaceful intentions, but he quickly gets in your face. Pressing his spear across your body, he yells, \n'Oy! I don't know who you are, or how you trekked out this far, but you need to go away. \nNo one should be at this castle. There are forces at work here you cannot understand.\n Although, without people it's kinda hard to get a break to eat around here...'\n The troll continues to ramble about his hunger and trails off, forgetting the conversation he was in.";
+						cout << "You approach the troll with peaceful intentions, but he quickly gets in your face. Pressing his spear across your body, he yells: \n'Oy! I don't know who you are, or how you trekked out this far, but you need to go away. \nNo one should be at this castle. There are forces at work here you cannot understand.\n Although, without people it's kinda hard to get a break to eat around here...'\n The troll continues to ramble about his hunger and trails off, forgetting the conversation he was in.";
 						break;
 					}
 					case 2:
@@ -547,7 +532,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					}
 				}
 			}
-			if (playerinventory.SearchInventory("Soup"))
+			if (taskDone[17])
 			{
 				if (!taskDone[14])
 				{
@@ -574,6 +559,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 							cout << "You place the bowl soup at the bottom of the stairs and walk just out of view.\n It's not long before the troll catches a whiff and runs down the stairs to it. He digs his face in ravenously. \nHe is too engaged with eating to notice anything going on around him.\n";
 							taskDone[14] = true;
 							trollEating = true;
+							playerinventory.RemoveItem("Soup");
 							break;
 						}
 						else if (use == "Sword")
@@ -603,16 +589,21 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				{
 					if (!taskDone[15])
 					{
-						cout << "[1]Inspect chandelier \n[2] Use item \n[3] Leave\n";
+						cout << "[1] Talk to troll \n[2] Inspect chandelier \n[3] Use item \n[4] Leave\n";
 						playerchoice = validate.inputValidation();
 						switch (playerchoice)
 						{
 						case 1:
 						{
-							cout << "The chandelier is hanging exactly where it was earlier. The troll is standing underneath it licking the soup bowl inside and out.\n";
+							cout << "The troll is busy stuffing his face. He barely realizes that you are next to him. \n";
 							break;
 						}
 						case 2:
+						{
+							cout << "The chandelier is hanging exactly where it was earlier. The troll is standing underneath it licking the soup bowl inside and out.\n";
+							break;
+						}
+						case 3:
 						{
 							GameClass Game;
 							string use = Game.UseMenu(playerinventory, roomObject);
@@ -644,7 +635,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					}
 					else if (taskDone[15])
 					{
-						cout << "\n\n[1] Admire gore \n[2] Inspect shattered chandelier \n[3] Leave\n";
+						cout << "\n\n[1] Admire gore \n[2] Inspect shattered chandelier \n[3] Use item \n[4] Leave\n";
 						playerchoice = validate.inputValidation();
 						switch (playerchoice)
 						{
@@ -658,7 +649,11 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 							cout << " All that is left is a pile of broken, twinkling crystal glass.\n";
 							break;
 						}
-
+						case 3:
+						{
+							cout << "You've already done enough damage in this room. \nSave your items for whatever lies through the door to the throne room.";
+							break;
+						}
 						default:
 							cout << "Invalid\n\n";
 							break;
@@ -669,19 +664,12 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			}
 		}
 	}
-	else if (locationName == "Castle Gallery")
-	{
 
-	}
-	else if (locationName == "Castle Hall")
-	{
-
-	}
 	else if (locationName == "Castle Kitchen")
 	{
 	while (playerchoice != 3)
 	{
-		if (!taskDone[10])
+		if (!taskDone[17])
 		{
 
 			cout << "\n[1] Inspect stove \n[2] Use item\n[3] Leave\n";
@@ -700,7 +688,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				if (use == "Lantern")
 				{
 					cout << "You open your lantern and slowly move it close to the stove. \nAll of a sudden, the fire catches the gas and huge flame erupts! \nYou duck as quickly as you can to avoid the fireball, and upon standing back up, you see a bubbling pot of soup.\n You procure a nearby bowl and ladle and serve yourself, but there's no time to eat just yet!";
-					taskDone[10] = true;
+					taskDone[17] = true;
 					playerinventory.AddItem("Soup");
 					break;
 				}
@@ -723,7 +711,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				break;
 			}
 		}
-		else if (taskDone[10])
+		else if (taskDone[17])
 		{
 			cout << "\n\n[3] Leave\n";
 			playerchoice = validate.inputValidation();
@@ -911,44 +899,37 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	}
 	else if (locationName == "Castle Foyer")
 	{
-	cout << locationDesc;
-		/*while (playerchoice != 4)
+		if (!taskDone[17])
 		{
-			if (!playerinventory.SearchInventory("Soup"))
 			{
+				cout << locationDesc;
+			}
+		}
+		if (taskDone[17])
+		{
+			if (!taskDone[14])
+			{
+				cout << locationDesc;
+			}
+			else if (trollEating == true)
+			{
+				if (!taskDone[15])
 				{
+					locationDesc = "You enter the waiting room of the castle.\nIt is warm, everywhere has been uncomfortably chilly.\nOr they made your spine shiver at least.\nWhy not this place?\nYou find no obvious gateway to the throne room.\nThere are, however, doorways to your left and right. The troll is at the bottom of the stairs, eating as though he hadn't in years.\n Above the staircase hangs a gigantic, precarious chandelier.\nFollowing the top of the fixture, you see a rope that follows the slant of the ceiling and hangs along the wall. \n";
+					cout << locationDesc;
+				}
+				else if (taskDone[15])
+				{
+					locationDesc = "The walls are dripping with hot, bubbling red liquid.\n The troll's body has been spread out across the room in a waythat you can't tell what chunks came from where. Broken glass is everywhere at your feet.\n";
 					cout << locationDesc;
 				}
 			}
-			if (playerinventory.SearchInventory("Soup"))
-			{
-				if (!taskDone[14])
-				{
-					//cout << locationDesc;
-				}
-				else if (trollEating == true)
-				{
-					if (!taskDone[15])
-					{
-						locationDesc = "You enter the waiting room of the castle.\nIt is warm, everywhere has been uncomfortably chilly.\nOr they made your spine shiver at least.\nWhy not this place?\nYou find no obvious gateway to the throne room.\nThere are, however, doorways to your left and right. The troll is at the bottom of the stairs, eating as though he hadn't in years.\n Above the staircase hangs a gigantic, precarious chandelier.\nFollowing the top of the fixture, you see a rope that follows the slant of the ceiling and hangs along the wall. \n";
-						cout << locationDesc;
-					}
-					else if (taskDone[15])
-					{
-						locationDesc = "The walls are dripping with hot, bubbling red liquid.\n The troll'd body has been spread out across the room that you can't tell what chunks came from where. Broken glass is everywhere at your feet.\n";
-						cout << locationDesc;
-					}
-				}
-			}
-
-			//cout << locationDesc;
-		}*/
-		
+		}
 	}
 	else if (locationName == "Castle Gallery")
 	{
 		cout << locationDesc;
-	}
+	}	
 	else if (locationName == "Castle Hall")
 	{
 		cout << locationDesc;

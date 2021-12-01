@@ -22,7 +22,7 @@ private:
 	string item;
 	string roomObject;
 
-	bool taskDone[12] = { false };
+	bool taskDone[19] = { false };
 	Inventory LocationInventory;
 	InputValidation validate;
 
