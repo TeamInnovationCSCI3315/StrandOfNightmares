@@ -7,6 +7,7 @@
 #include "GameClass.h"
 #include "Inventory.h"
 #include "InputValidation.h"
+#include "FinalBoss.h"
 using namespace std;
 
 class Locations
@@ -22,9 +23,10 @@ private:
 	string item;
 	string roomObject;
 
-	bool taskDone[12] = { false };
+	bool taskDone[16] = { false };
 	Inventory LocationInventory;
 	InputValidation validate;
+
 
 public:
 	string getRoomObject();
@@ -40,7 +42,7 @@ public:
 	void setLocationDesc(string);
 	Locations(string, string, string, string, string, string, string, string);
 	void CheckLocation(Locations[], string, int);
-	void LocationActions(Locations[], Inventory&, int);
+	void LocationActions(Locations[], Inventory&, int, FinalBoss&);
 	void LocationLook(Locations[], Inventory&, int);
 };
 #endif

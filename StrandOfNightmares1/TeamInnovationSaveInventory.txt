@@ -1,5 +1,4 @@
-Sage
 Lantern
+Sage
 Sword
 Lamp-oil
-

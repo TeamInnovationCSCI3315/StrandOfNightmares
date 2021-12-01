@@ -8,6 +8,7 @@
 #include <vector>
 #include "InputValidation.h"
 #include <fstream>
+#include "FinalBoss.h"
 #include <regex>
 using namespace std;
 
@@ -67,7 +68,7 @@ Displays the user interface for the game as a whole. Player can:
 		Case 3: Show Inventory (DisplayInventory),
 		Case 0: Quit Game (Quit)
 */
-void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& PlayerInventory, GameClass& Game, int AllLocationsSize)
+void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& PlayerInventory, GameClass& Game, int AllLocationsSize, FinalBoss& Final)
 {
 	cout << "--------------------------------------------------------------------------" << endl;
 	cout << "You are currently at: " << PlayerLocation.getLocationName() << endl;
@@ -79,7 +80,7 @@ void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& Pl
 	switch (playerInput)
 	{
 	case 1:
-		PlayerLocation.LocationActions(AllLocations, PlayerInventory, AllLocationsSize);
+		PlayerLocation.LocationActions(AllLocations, PlayerInventory, AllLocationsSize, Final);
 		break;
 	case 2:
 		MoveOptions(AllLocations, PlayerLocation, AllLocationsSize);
@@ -184,7 +185,6 @@ void UI::SaveGame(Inventory& playerInventory, Locations& playerLocation)
 }
 /*
 LoadGame reads 2 files TeamInnovationSaveInventory.txt, and TeamInnovationSaveLocation.txt, and if found, will set the players location to the location read by the file, and adds previous items to their inventory.
-
 */
 void UI::LoadGame(Inventory& playerInventory, Locations& playerLocation, Locations AllLocations[],int AllLocationsSize)
 {

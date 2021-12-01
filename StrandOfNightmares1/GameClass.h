@@ -13,17 +13,18 @@ using namespace std;
 class GameClass
 {
 private:
+	bool GameOver=false;
 
-	//string Locations[3] = { "Village Entrance", "Tavern", "Abandoned Shack" }; //, {"Village Entrance Info", "Tavern Info", "Abandoned Shack Info"} };
-	string playerLocation;
+
 	InputValidation validate;
 	
 public:
-//	void Location();
-	GameClass();
+
 	void Quit();
 	bool TunnelPuzzle();
 	void FirstDeath();
+	bool IsGameOver();
+	void setGameOver(bool);
 	string UseMenu(Inventory, string);
 
 };
