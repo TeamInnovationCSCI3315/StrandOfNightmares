@@ -22,5 +22,6 @@ public:
 	void RemoveAllItems();
 	string GetItemAt(int);
 	int GetInventorySize();
+
 };
 #endif
