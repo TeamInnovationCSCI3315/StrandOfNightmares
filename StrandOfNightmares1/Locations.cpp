@@ -207,7 +207,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		}
 		if (playerinventory.SearchInventory("Lantern"))
 		{
-			cout << "[1] Go to bar\n [3] Go back to Village Entrance\n \n";
+			cout << "[1] Go to bar\n[3] Exit\n \n";
 		}
 
 		while (playerchoice != 3)
@@ -222,9 +222,9 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			case 2:
 				if (!playerinventory.SearchInventory("Lantern"))
 				{
-					cout << "You have picked up the lantern from the table! \n ";
+					cout << "You have picked up the lantern from the table!\n";
 					playerinventory.AddItem(TempLocation[2].getItem());
-					cout << "[1] Go to bar\n [3] Go back to Village Entrance\n \n";
+					cout << "[1] Go to bar\n[3] Exit\n \n";
 				}
 				else
 				{
@@ -254,7 +254,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			case 1:
 				if (!playerinventory.SearchInventory("Sword"))
 				{
-					cout << "You have picked up the Rusty Sword from the ground! \n ";
+					cout << "You have picked up the Rusty Sword from the ground!\n";
 					playerinventory.AddItem(TempLocation[4].getItem());
 					cout << "[3] Continue Onwards\n \n";
 				}
@@ -288,7 +288,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		{
 			Death1.FirstDeath();
 			locationName = "...";
-			locationDesc = "You find your eyes are hazy, you open them. Theres nothing around you but what appears to be a door back to where you started...";
+			locationDesc = "You find your eyes are hazy, you open them. There is nothing around you but what appears to be a door back to where you started...\n";
 			northDoor = "Village Entrance";
 			southDoor = "";
 			westDoor = "";
@@ -341,7 +341,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 	STAIRS:
 		if (!taskDone[7])
 		{
-			cout << "A ghostly presence is in the room. A wraith appears in front of you\n";
+			cout << "A ghostly presence is in the room. A \033[1;31mwraith\033[0m appears in front of you\n";
 
 			while (playerchoice != 3)
 			{
@@ -359,7 +359,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					}
 					else if (use == "Sage")
 					{
-						cout << "You put the Sage herbs to the lantern, lighting it on fire. Smoke fills the room and the Wraith shrieks as it fades away. \n";
+						cout << "You put the Sage herbs to the lantern, lighting it on fire.\nSmoke fills the room and the Wraith shrieks as it fades away.\n";
 						//playerinventory.RemoveItem("Sage");
 						northDoor = "Mysterious Door";
 						taskDone[7] = true;
@@ -414,7 +414,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				{
 				case 1:
 				{
-					cout << "You approach the figure until you can just barely make out their face. They reveal themselves to be a thief graverobber.\n They casually go about their business digging up and peeling jewelry off of various corpses.\n They happen to have what looks like children's toys and other knick-knacks from the recently deceased on their person.\n He asks you if you're new around here, casually indifferent to the actions he is doing.\n";
+					cout << "You approach the figure until you can just barely make out their face.\nThey reveal themselves to be a \033[1;31mgraverobber\033[0m.\n They casually go about their business digging up and peeling jewelry off of various corpses.\nThey happen to have what looks like children's toys and other knick-knacks from the recently deceased on their person.\nHe asks you if you're new around here, casually indifferent to the actions he is doing.\n";
 					break;
 				}
 				case 2:
@@ -422,7 +422,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					string use = Game.UseMenu(playerinventory, roomObject);
 					if (use == "Sword")
 					{
-						cout << "You lunge towards the thief with your sword, stabbing him straight through his twisted heart.\n He doubles back in pain, slumping to the ground like a sack of grain, and like one he spills to the ground. Instead of grain, he spills out blood from his wound and mouth.\n He is now dead, his ill-gotten goods are now yours.\n Unfortunately, you have little use for most of his wares, except for a small stash of lamp oil. You take it hastily.";
+						cout << "You lunge towards the thief with your sword, stabbing him straight through his twisted heart.\n He doubles back in pain, slumping to the ground like a sack of grain, and like one he spills to the ground. Instead of grain, he spills out blood from his wound and mouth.\n He is now dead, his ill-gotten goods are now yours.\n Unfortunately, you have little use for most of his wares, except for a small stash of \033[1;34mlamp oil\033[0m. You take it hastily.";
 						taskDone[10] = true;
 						playerinventory.AddItem("Lamp-oil");
 						break;
@@ -449,7 +449,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			}
 			else if (taskDone[10])
 			{
-				locationDesc = "You are in the decrepid cemetary.\n The dates indicate that some of these graves have been here for hundreds of years.\n Most are too weathered to be legible anymore.\n The thief's body lays before you.\n";
+				locationDesc = "You are in the decrepid cemetary.\nThe dates indicate that some of these graves have been here for hundreds of years.\nMost are too weathered to be legible anymore.\nThe thief's body lays before you.\n";
 				cout << "\n\n[1] Inspect the Graves \n[2] Inspect Body\n[3] Leave\n";
 				playerchoice = validate.inputValidation();
 				switch (playerchoice)
@@ -511,7 +511,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			system("pause");
 			cout << "\nYou pulled out your trump card though haven't you?\nYou forgot.\nYou were so close to giving in.\Just finally letting me live in fantasy.\nBut you forgot and thus now intend to wake up.\nOr you would anyway in time.\nSo I gave you your 'quest'....";
 			system("pause");
-			cout << "\nYou understand?\nI embraced our nightmare.\nWipe that expression off your face.\nDon't you understand how ugly we look like that?\nMust I spell it out again.\nI am your deep conscience.\nI AM YOU.";
+			cout << "\nYou understand?\nI embraced our nightmare.\nWipe that expression off your face.\nDon't you understand how ugly we look like that?\nMust I spell it out again.\nI am your deep conscience.\n\033[1;31mI AM YOU.\033[0m";
 			system("pause");
 			cout << "\nI would rather spend our entire lives in this nightmare.\nIt's so much better than the reality we subjected ourselves to.\nIn time it's ugly now but I may be able to make it beautiful.\nBecause it's ours.\nNobody else's.";
 			system("pause");
@@ -564,19 +564,22 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	int playerchoice = 1;
 	if (locationName == "Village Entrance")
 	{
-		locationDesc = "You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking.\nAs you look around you notice how dark it is, the village allows you to barely maneuver around with the faint candlelight from the street lamps.\nIn one direction, following the road to the east you notice a tavern up ahead with bright lights and the sounds of commerce. This could be a good place to find information and help and it is probably the brightest place.\nIn the other direction you notice the lights grow scarcer and scarcer until you can barely see the outline of what seems to be an abandoned shack, something draws you to it's shadow, curiosity maybe?\n ";
+		//locationDesc = "You find yourself looking at a village as you sit at the entrance of it. There is the light hooting of an owl as you start walking.\nAs you look around you notice how dark it is, the village allows you to barely maneuver around with the faint candlelight from the street lamps.\nIn one direction, following the road to the east you notice a tavern up ahead with bright lights and the sounds of commerce. This could be a good place to find information and help and it is probably the brightest place.\nIn the other direction you notice the lights grow scarcer and scarcer until you can barely see the outline of what seems to be an abandoned shack, something draws you to it's shadow, curiosity maybe?\n ";
 		cout << locationDesc;
 	}
 	else if (locationName == "Abandoned Shack")
 	{
 		if (playerinventory.SearchInventory("Lantern"))
 		{
-			locationDesc = "With the lantern in hand you head towards the abandoned shack once again.\nIt seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.\nIt has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing between youand the inside.\nYou pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.\nYou step to the side with an inexplicable calmness as it falls where you were previously standing.\nThe inside of it is  hard to take in as you enter, still wondering.\nThe walls seem warped and as if waves of fabric compared to it's porcupine exterior.\nAn ocean of fine willow, sandedand well maintained like it's floors and a nearby bed.\nThe candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.\nStartled, you notice the new wax drips just below a trapdoor not just a foot away from you.\nIt's fine finished wood and golden knocker whisper to you almost in a wordless alure.\nYou wonder finally, why ? \nThe door, the candles, the words, this shack.\nAnd it's with these thoughts you wonder, should you go down the trapdoor? There seems to be some sort of tunnel underneith the door, but it doesnt seem possible to return. \n";
+			locationDesc = "With the lantern in hand you head towards the abandoned shack once again.\nIt seems to be made out of a rotting, creeping willow of some kind or another, though it splinters out as a thorny hide.\nIt has a flimsy door held together by sheer luck, and a rusted doorknob is the only thing standing in your way.\nYou pull open the wooden door as you do the door comes off of it's hinges with a loud thunk.\nYou step to the side with an inexplicable calmness as it falls where you were previously standing.\n";
 			cout << locationDesc;
+			system("pause");
+			cout<<"The inside of it is hard to take in as you enter, still wondering.\nThe walls seem warped and as if waves of fabric compared to it's porcupine exterior.\nAn ocean of fine willow, sandedand well maintained like it's floors and a nearby bed.\nThe candles with their wax drapping over windowsills greet you with the faintest flicker, before extinguishing.\nStartled, you notice the new wax drips just below a trapdoor not just a foot away from you.\nIt's fine finished wood and golden knocker whisper to you almost in a wordless alure.\nYou wonder finally, why? \nThe door, the candles, the words, this shack.\nAnd it's with these thoughts you wonder.\nWill you go down the trapdoor? There seems to be some sort of \033[1;34mtunnel\033[0m underneath the door.\nIt doesn't seem possible to return.\n";
+			system("pause");
 		}
 		else
 		{
-			locationDesc = "After walking you arrive at the pitch black shack, it's presence alone stands as if you could die and it wouldn't so much as creek.\nAs you approach it closer to inspect the strange building you find that it becomes far too dark to see and proceed forward, at least safely.\nDo you decide to exit now ? \n";
+			locationDesc = "After walking you arrive at the pitch black shack.\nIt's presence alone stands as if you could die and it wouldn't so much as creek.\nAs you approach it closer to inspect the strange building you find that it becomes far too dark.\nYou feel like you cannot proceed safely.\nDo you decide to exit now ? \n";
 			cout << locationDesc;
 		}
 	}
@@ -591,12 +594,12 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	{
 		if (!playerinventory.SearchInventory("Lantern"))
 		{
-			locationDesc = "You enter into a tavern with bright almost blinding light. It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of you  and proceed about their bussiness.\nThere lays the bar to your right that carries the smells of beer to you alongside other aromas.\nYou also see on your left a fine finished table with a lantern on it.\n";
+			locationDesc = "You enter into a tavern with bright almost blinding light. It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of you.\nThere lays the \033[1;34mbar\033[0m to your right that carries the smells of beer to you alongside other aromas.\nYou also see on your left a fine finished table with a \033[1;34mlantern\033[0m on it.\n";
 			cout << locationDesc;
 		}
 		if (playerinventory.SearchInventory("Lantern"))
 		{
-			locationDesc = "You enter into a tavern with bright almost blinding light. It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of you and proceed about their bussiness.\nThere lays the bar to your right that carries the smells of beer to you alongside other aromas.\n";
+			locationDesc = "You enter into a tavern with bright almost blinding light. It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of you and proceed about their bussiness.\nThere lays the \033[1;34bar\033[0m to your right that carries the smells of beer to you alongside other aromas.\n";
 			cout << locationDesc;
 		}
 	}
@@ -609,14 +612,14 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 		cout << locationDesc;
 		if (!playerinventory.SearchInventory("Sword"))
 		{
-			locationDesc = "You look up to find the trapdoor you entered from, out of reach.\n Looking around you notice you're in a cramped cavern.\n It is granite like with it's soft shimmer the walls give off as your lantern's light hits and exits the speckled walls.\n You see two pathways ahead of you, one to the left and one that continues straight.\n";
-			cout << locationDesc;
-			cout << "A rusty sword lays on the ground in front of you.\n It looks like it was left long ago by a weary traveler.\n";  // \n[1] Pick up sword \n[3] Continue onward\n";
+			locationDesc = "You look up to find the trapdoor you entered from, out of reach.\nLooking around you notice you're in a cramped cavern.\nIt is granite like with it's soft shimmer the walls give off as your lantern's light hits and exits the speckled walls.\nYou see two pathways ahead of you, one to the \033[1;34mleft\033[0m and one that continues \033[1;34mstraight.\033[0m\n";
+			//cout << locationDesc;
+			cout << "A rusty \033[1;34msword\033[0m lays on the ground in front of you.\nIt looks like it was left long ago by a weary traveler.\n";  // \n[1] Pick up sword \n[3] Continue onward\n";
 
 		}
 		if (playerinventory.SearchInventory("Sword"))
 		{
-			cout << locationDesc;
+			//cout << locationDesc;
 		}
 	}
 	else if (locationName == "Left Tunnel Room")
@@ -624,14 +627,14 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 		GameClass Death1;
 		isinTunnel = 1;
 		string playerchoice = "";
-		locationDesc = "As you go down the pathway to the left the granite gives way to finished stonework.\n You see at the end a shadow.\n But not just any shadow, a darkness your light fails to illuminate from where you're standing.\nIt's disorienting to your eyes, and startles your stomach as you try to make out what it is.\n A faint moaning can be heard, it seems to be alive\n You consider approaching the shadow to inspect it, but you have no idea how deadly this encounter could be.\n";
+		locationDesc = "As you go down the pathway to the left the granite gives way to finished stonework.\n You see at the end a \033[1;31mshadow\033[0m.\n But not just any shadow, a darkness your light fails to illuminate from where you're standing.\nIt's disorienting to your eyes, and startles your stomach as you try to make out what it is.\n A faint moaning can be heard, it seems to be alive\n You consider approaching the shadow to inspect it, but you have no idea how \033[1;31mdeadly\033[0m this encounter could be.\n";
 		cout << locationDesc << endl;
 	}
 	else if (locationName == "Mysterious Room")
 	{
 		string playerchoice = "";
 		GameClass Puzzle;
-		locationDesc = "You are in a rigid, uneven granite room difficult to walk in. You see up ahead of you a dead end across the granite with nothing left to show signs of life or means of escape however,\n as you get close you start to notice that there may be something to this. You see etchings into the granite with your lantern.\n";
+		locationDesc = "You are in a rigid, uneven granite room difficult to walk in.\nYou see up ahead of you a dead end across the granite with nothing left to show signs of life or means of escape.\nHowever, as you get close you start to notice that there may be something to this.\nYou see engravings in the granite with your lantern.\n";
 		cout << locationDesc;
 	}
 	else if (locationName == "Staircase Room")
@@ -641,7 +644,7 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 
 		if (!taskDone[7])
 		{
-			cout << "A ghostly presence is in the room. A wraith appears in front of you\n";
+			cout << "A ghostly presence is in the room. A \033[1;31mwraith\033[0m appears in front of you\n";
 		}
 		else if (taskDone[7])
 		{
@@ -655,7 +658,7 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	}
 	else if (locationName == "Hilly Fields")
 	{
-		locationDesc = "As you step outside you squint from the morning haze, it only takes you another moment to notice the fog.\nIt's thick enough that on any other morning you'd be blinded by it's light.\nInstead you're blinded by this mist. You can barely see in front of you.\nYour fire is going down from your lamp, you need more light.\nYou see the silhoutte of a large structure to your north, and a long path that winds across the hills towards it.\nYou see a shadowy structure to the west that appears to be a bit closer.\nIt is difficult to make it all out clearly.\n";
+		locationDesc = "As you step outside you squint from the morning haze, it only takes you another moment to notice the \033[1;31mfog\033[0m.\nIt's thick enough that on any other morning you'd be blinded by it's light.\nInstead you're blinded by this mist. You can barely see in front of you.\nYour fire is going down from your lamp, you need more \033[1;34mlight\033[0m.\nYou see the silhoutte of a \033[1;34mlarge structure to your north\033[0m, and a long path that winds across the hills towards it.\nYou see a \033[1;34mshadowy structure to the west\033[0m that appears to be a bit closer.\nIt is difficult to make it all out clearly.\n";
 		cout << locationDesc;
 	}
 	else if (locationName == "Cemetary")
@@ -667,7 +670,7 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 	{
 		if (playerinventory.SearchInventory("Lamp-oil"))
 		{
-			locationDesc = "You see northward what seems to be a castle of some sorts, it's shape you're barely able to make out in the distance.\n";
+			locationDesc = "You see northward what seems to be a \033[1;34mcastle\033[0m of some sorts, it's shape you're barely able to make out in the distance.\n";
 			cout << locationDesc;
 		}
 		else

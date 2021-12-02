@@ -20,11 +20,11 @@ PlayerClass player1;
 void UI::DisplayStartScreen(Inventory& playerInventory, Locations& playerLocation, Locations AllLocations[], int AllLocationsSize)
 {
 	GameClass Game;
-	cout << "-----------------------A Strand of Nightmares--------------------------" << endl;
-	cout << "                   | |--|                       |--| |                 " << endl << "                   |-|  |-----------------------|  |-|" << endl << "                   | |  |                       |  | |                 " << endl;
-	cout << "------------------(Press 1 to Start the Nightmare)---------------------"<<endl;
-	cout << "-----------------(Press 2 to Continue the Nightmare)-------------------" << endl;
-	cout << "---------------(Press Anything Else to End the Dream)------------------" << endl;
+	cout << "\033[1;33m--------------------------\033[0m\033[1;31mA Strand of Nightmares\033[0m\033[1;33m-----------------------\033[0m" << endl;
+	cout << "                   \033[1;31m|\033[0m \033[1;34m|-\033[1;31m-\033[0m\033[1;34m|\033[0m                       \033[1;31m|\033[0m\033[1;34m-\033[0m\033[1;31m-\033[0m\033[1;31m|\033[0m \033[1;34m|\033[0m                 " << endl << "                   \033[1;31m|\033[0m\033[1;34m-|  |\033[0m\033[1;33m-----------------------\033[0m\033[1;31m|\033[0m  \033[1;31m|\033[0m\033[1;34m-|\033[0m" << endl << "                   \033[1;33m| |  |                       |  | |\033[0m                 " << endl;
+	cout << "\033[1;33m------------------(Press 1 to Start the Nightmare)---------------------\033[0m"<<endl;
+	cout << "\033[1;31m-----------------(Press 2 to Continue the Nightmare)-------------------\033[0m" << endl;
+	cout << "\033[1;34m---------------(Press Anything Else to End the Dream)------------------\033[0m" << endl;
 	string playerinputst = "";
 	cin >> playerinputst;
 		if (playerinputst == "1")
@@ -56,8 +56,8 @@ void UI::DisplayIntroduction()
 		 << "You'll learn more of what I mean in due time " << player1.getName() << " all in due time.\n";
 	system("pause");
 	cout << "I will be your guide through this bridge, think of me as your deep concious, in a way I am that.\n"
-		 << "Your goal as you know it is to find a way to wake up, to return to reality in the only way you know that is to dive into the dream.\n"
-	     << "I wish you the best of luck, I know you can navigate the knots of this world, you'll find them, they pull you to them.\n I shall be seeing you very soon.\n";
+		 << "Your goal as you know it is to find a way to wake up."<<endl<<"To return to reality in the only way you know that is to dive into the dream.\n"
+	     << "I wish you the best of luck, I know you can navigate the knots of this world, you'll find them, they pull you to them.\nI shall be seeing you very soon.\n";
 	system("pause");
 	system("CLS");
 }

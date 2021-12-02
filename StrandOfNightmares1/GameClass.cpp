@@ -94,7 +94,7 @@ bool GameClass::TunnelPuzzle()
 }
 void GameClass::FirstDeath()
 {
-	cout << "As you approach the figure up ahead a chill follows your spine but you press on." << endl;
+	cout << "\033[1;31mAs you approach the figure up ahead a chill follows your spine but you press on." << endl;
 	cout << "When the figure is about to come into the light of your lantern, you witness a strange occurance." << endl;
 	cout << "As if a puff of midnight the glow causes you to blink, then you find yourself staring ahead at a dead end." << endl;
 	cout << "You turn to leave when you see it." << endl;
@@ -113,7 +113,7 @@ void GameClass::FirstDeath()
 	cout << "You find your vision in the air, you see your dismembered corpse from above." << endl;
 	system("pause");
 	cout << "Your head falls to the ground, and the last thing you see is it sinking back into the shadows." << endl;
-	cout << "Ready to dream again, you sleep." << endl;
+	cout << "Ready to dream again, you sleep.\033[0m" << endl;
 	system("pause");
 }
 bool GameClass::IsGameOver()
