@@ -189,7 +189,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			case 2:
 				if (!playerinventory.SearchInventory("Sage"))
 				{
-					cout << "You have picked the Sage Herb from the garden! \n ";
+					cout << "You have picked the \033[1;32mSage Herb\033[0m from the garden! \n ";
 					playerinventory.AddItem(TempLocation[3].getItem());
 					cout << "\n[1] Admire the garden \n[3] Return to menu\n \n";
 
@@ -222,7 +222,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			case 2:
 				if (!playerinventory.SearchInventory("Lantern"))
 				{
-					cout << "You have picked up the lantern from the table!\n";
+					cout << "You have picked up the \033[1;32mlantern\033[0m from the table!\n";
 					playerinventory.AddItem(TempLocation[2].getItem());
 					cout << "[1] Go to bar\n[3] Exit\n \n";
 				}
@@ -254,7 +254,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			case 1:
 				if (!playerinventory.SearchInventory("Sword"))
 				{
-					cout << "You have picked up the Rusty Sword from the ground!\n";
+					cout << "You have picked up the Rusty \033[1;32mSword\033[0m from the ground!\n";
 					playerinventory.AddItem(TempLocation[4].getItem());
 					cout << "[3] Continue Onwards\n \n";
 				}
@@ -359,7 +359,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					}
 					else if (use == "Sage")
 					{
-						cout << "You put the Sage herbs to the lantern, lighting it on fire.\nSmoke fills the room and the Wraith shrieks as it fades away.\n";
+						cout << "\033[1;31mYou put the Sage herbs to the lantern, lighting it on fire.\nSmoke fills the room and the Wraith shrieks as it fades away.\n\033[0m";
 						//playerinventory.RemoveItem("Sage");
 						northDoor = "Mysterious Door";
 						taskDone[7] = true;
@@ -422,7 +422,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 					string use = Game.UseMenu(playerinventory, roomObject);
 					if (use == "Sword")
 					{
-						cout << "You lunge towards the thief with your sword, stabbing him straight through his twisted heart.\n He doubles back in pain, slumping to the ground like a sack of grain, and like one he spills to the ground. Instead of grain, he spills out blood from his wound and mouth.\n He is now dead, his ill-gotten goods are now yours.\n Unfortunately, you have little use for most of his wares, except for a small stash of \033[1;34mlamp oil\033[0m. You take it hastily.";
+						cout << "\033[1;31mYou lunge towards the thief with your sword, stabbing him straight through his twisted heart.\033[0m\n He doubles back in pain, slumping to the ground like a sack of grain, and like one he spills to the ground. Instead of grain, he spills out blood from his wound and mouth.\n He is now dead, his ill-gotten goods are now yours.\n Unfortunately, you have little use for most of his wares, except for a small stash of \033[1;32mlamp oil\033[0m. You take it hastily.";
 						taskDone[10] = true;
 						playerinventory.AddItem("Lamp-oil");
 						break;

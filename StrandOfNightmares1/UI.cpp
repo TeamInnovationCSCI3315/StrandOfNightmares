@@ -71,7 +71,7 @@ Displays the user interface for the game as a whole. Player can:
 void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& PlayerInventory, GameClass& Game, int AllLocationsSize, FinalBoss& Final)
 {
 	cout << "--------------------------------------------------------------------------" << endl;
-	cout << "You are currently at: " << PlayerLocation.getLocationName() << endl;
+	cout << "You are currently at: \033[1;34m" << PlayerLocation.getLocationName() << "\033[0m" << endl;
 	cout << "--------------------------------------------------------------------------" << endl;
 	cout << "[1] Interact\n" << "[2] Move\n" << "[3] Inventory \n" << "[4] Look \n" << "[5] Save Game \n" << "[0] Quit Game\n";
 	cout << "--------------------------------------------------------------------------" << endl;
@@ -111,7 +111,8 @@ Switch Statement to move between:
 */
 void UI::MoveOptions(Locations AllLocations[], Locations& PlayerLocation, int AllLocationsSize)
 {
-	cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << endl << endl;
+	cout << "\033[1;34m";
+	cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << "\033[0m" << endl << endl;
 	int playerChoice;
 	playerInput = validate.inputValidation();
 	switch (playerInput)

@@ -46,7 +46,7 @@ bool GameClass::TunnelPuzzle()
 		If answer is right, move to next question. If all questions are complete, return true. Else, return false.
 		*/
 	int playerchoice = 0;
-	cout << "Solve this puzzle, unlock the next room\n" << endl;
+	cout << "\033[1;35mSolve this puzzle, unlock the next room\n\033[0m" << endl;
 	cout << "Who is reading this to you?" << endl;
 	cout << "-----------------" << endl;
 	cout << "1.) The Narrator " << endl;
