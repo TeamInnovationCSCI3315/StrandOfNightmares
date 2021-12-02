@@ -27,11 +27,11 @@ int main()
 	Multiple rooms are created Location(Location Name, Location Description, North Room, South Room, East Room, West Room, item within room, object within room: NPC);
 	All will be strings, if there is no value for one, set to ""
 	*/
-	Locations VillageEntrance("Village Entrance", "You find yourself sitting at the entrance of a village. \nThere is the light hooting of an owl as you start walking.\nAs you look around you notice how dark it is.\nThe village allows you to barely maneuver around with candlelight from street lamps.\nIn one direction, following the road to the east you notice a \033[1;34mtavern\033[0m.\nIt has bright lights and the sounds of commerce. \nThis could be a good place to find information and help and it is probably the brightest place. \nIn the path directly in front of you lies a well lit \033[1;34mgarden\033[0m. \nIn the other direction you notice the lights grow scarcer and scarcer. \nYou can barely see the outline of what seems to be an \033[1;34mabandoned shack\033[0m. \nSomething draws you to it's shadow, curiosity maybe?\n ", "Village Garden", "", "Tavern", "Abandoned Shack", "","");
+	Locations VillageEntrance("Village Entrance", "You find yourself sitting at the entrance of a village. \nThere is the light hooting of an owl as you start walking.\nAs you look around you notice how dark it is.\nThe village allows you to barely maneuver around with candlelight from street lamps.\nIn one direction, following the road to the east you notice a tavern. \nIt has bright lights and the sounds of commerce. \nThis could be a good place to find information and help and it is probably the brightest place. \nIn the path directly in front of you lies a well lit garden. \nIn the other direction you notice the lights grow scarcer and scarcer. \nYou can barely see the outline of what seems to be an abandoned shack. \nSomething draws you to it's shadow, curiosity maybe?\n ", "Village Garden", "", "Tavern", "Abandoned Shack", "","");
 	Locations AbandonedShack("Abandoned Shack", "After walking you arrive at the pitch black shack, it's presence alone stands as if you could die and it wouldn't so much as creek.\nAs you approach it closer to inspect the strange building you find that it becomes far too dark to see and proceed forward, at least safely.\nDo you decide to exit now? \n ", "", "", "Village Entrance", "", "", "");
 	Locations Tavern("Tavern", "You enter into a tavern with bright almost blinding light. It is noisy as people chat around at the bar and entrance.\nYou are able to squeeze your way into the main room, most people have not taken notice of you and proceed about their bussiness.\nThere lays the bar to your right that carries the smells of beer to you alongside other aromas.\nYou also see on your left a fine finished table with a lantern on it.\n \n [1] Go to bar \n [2] Pick up lantern from table \n [3] Exit\n ", "", "", "", "Village Entrance", "Lantern","");
 	Locations VillageGarden("Village Garden", "Village Garden description", "", "Village Entrance", "", "", "Sage", "");
-	Locations Tunnel("Tunnel", "You awake on the floor, a throbbing pain coming from your head.\nAs you open your eyes by some miracle the lantern is lit next to your head.\nYou arise, lantern in hand to find a crimson streak on the ground where you laid.\nYou look up to find the trapdoor you entered from, out of reach.\nLooking around you notice you're in a cramped cavern.\nIt is granite like with it's soft shimmer the walls give off as your lantern's light hits and exits the speckled walls.\nYou see two pathways ahead of you, one to the \033[1;34mleft\033[0m and one that continues \033[1;34mstraight\033[0m.\n", "Mysterious Room", "", "", "Left Tunnel Room", "Sword","");
+	Locations Tunnel("Tunnel", "You awake on the floor, a throbbing pain coming from your head.\nAs you open your eyes by some miracle the lantern is lit next to your head.\nYou arise, lantern in hand to find a crimson streak on the ground where you laid.\nYou look up to find the trapdoor you entered from, out of reach.\nLooking around you notice you're in a cramped cavern.\nIt is granite like with it's soft shimmer the walls give off as your lantern's light hits and exits the speckled walls.\nYou see two pathways ahead of you, one to the left and one that continues straight\n", "Mysterious Room", "", "", "Left Tunnel Room", "Sword","");
 	Locations MysteriousRoom("Mysterious Room", "You are in a rigid, uneven granite room difficult to walk in.\n", "", "Tunnel", "", "Left Tunnel Room", "","");
 	Locations LeftTunnelRoom("Left Tunnel Room", "As you go down the pathway to the left the granite gives way to finished stonework.\n You see at the end a shadow.\n But not just any shadow, a darkness your light fails to illuminate from where you're standing.\nIt's disorienting to your eyes, and startles your stomach as you try to make out what it is.\n A faint moaning can be heard, it seems to be alive\n This could be deadly. Do you approach the shadow to inspect? \n", "", "", "Tunnel", "Mysterious Room", "","");
 	Locations StaircaseRoom("Staircase Room", "Staircase Room Description", "", "Mysterious Room", "", "", "", "Wraith");
@@ -63,7 +63,7 @@ int main()
 	*/
 	UI Interface;
 	PlayerClass Player();
-		cout << "Game Version 0.5" << endl;
+		cout << "Game Version 1.0" << endl;
 		// Display Start Screen
 		Interface.DisplayStartScreen(PlayerInventory, PlayerLocation,AllLocations,AllLocationsSize);
 		// Display Introduction
@@ -74,7 +74,7 @@ int main()
 				Interface.Menu(AllLocations, PlayerLocation, PlayerInventory, Game, AllLocationsSize, Final);
 			}
 		cout << "***********************************************************************************************\n";
-		cout << "\033[1;34m" << "Thank you for playing! You may open the game again to replay it, or start from a previous save!\n" << "\033[0m" << endl;
+		cout << "Thank you for playing! You may open the game again to replay it, or start from a previous save!\n" << endl;
 		cout << "***********************************************************************************************\n";
 	return 0;
 }

@@ -19,12 +19,13 @@ PlayerClass player1;
 */
 void UI::DisplayStartScreen(Inventory& playerInventory, Locations& playerLocation, Locations AllLocations[], int AllLocationsSize)
 {
+	
 	GameClass Game;
-	cout << "\033[1;33m--------------------------\033[0m\033[1;31mA Strand of Nightmares\033[0m\033[1;33m-----------------------\033[0m" << endl;
-	cout << "                   \033[1;31m|\033[0m \033[1;34m|-\033[1;31m-\033[0m\033[1;34m|\033[0m                       \033[1;31m|\033[0m\033[1;34m-\033[0m\033[1;31m-\033[0m\033[1;31m|\033[0m \033[1;34m|\033[0m                 " << endl << "                   \033[1;31m|\033[0m\033[1;34m-|  |\033[0m\033[1;33m-----------------------\033[0m\033[1;31m|\033[0m  \033[1;31m|\033[0m\033[1;34m-|\033[0m" << endl << "                   \033[1;33m| |  |                       |  | |\033[0m                 " << endl;
-	cout << "\033[1;33m------------------(Press 1 to Start the Nightmare)---------------------\033[0m"<<endl;
-	cout << "\033[1;31m-----------------(Press 2 to Continue the Nightmare)-------------------\033[0m" << endl;
-	cout << "\033[1;34m---------------(Press Anything Else to End the Dream)------------------\033[0m" << endl;
+	cout << "-----------------------A Strand of Nightmares--------------------------" << endl;
+	cout << "                   | |--|                       |--| |                 " << endl << "                   |-|  |-----------------------|  |-|" << endl << "                   | |  |                       |  | |                 " << endl;
+	cout << "------------------(Press 1 to Start the Nightmare)---------------------" << endl;
+	cout << "-----------------(Press 2 to Continue the Nightmare)-------------------" << endl;
+	cout << "---------------(Press Anything Else to End the Dream)------------------" << endl;
 	string playerinputst = "";
 	cin >> playerinputst;
 		if (playerinputst == "1")
@@ -71,7 +72,7 @@ Displays the user interface for the game as a whole. Player can:
 void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& PlayerInventory, GameClass& Game, int AllLocationsSize, FinalBoss& Final)
 {
 	cout << "--------------------------------------------------------------------------" << endl;
-	cout << "You are currently at: \033[1;34m" << PlayerLocation.getLocationName() << "\033[0m" << endl;
+	cout << "You are currently at: " << PlayerLocation.getLocationName()  << endl;
 	cout << "--------------------------------------------------------------------------" << endl;
 	cout << "[1] Interact\n" << "[2] Move\n" << "[3] Inventory \n" << "[4] Look \n" << "[5] Save Game \n" << "[0] Quit Game\n";
 	cout << "--------------------------------------------------------------------------" << endl;
@@ -111,8 +112,8 @@ Switch Statement to move between:
 */
 void UI::MoveOptions(Locations AllLocations[], Locations& PlayerLocation, int AllLocationsSize)
 {
-	cout << "\033[1;34m";
-	cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << "\033[0m" << endl << endl;
+
+	cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << endl << endl;
 	int playerChoice;
 	playerInput = validate.inputValidation();
 	switch (playerInput)
@@ -206,7 +207,9 @@ void UI::LoadGame(Inventory& playerInventory, Locations& playerLocation, Locatio
 	locationLoad.open("TeamInnovationSaveLocation.txt");
 	if (!inventoryLoad || !locationLoad)
 	{
-		cout << "Error, no file found";
+		cout << "Error, no file found\n";
+		system("pause");
+		exit(0);
 	}
 	else
 	{

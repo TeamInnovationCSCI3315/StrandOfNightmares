@@ -40,7 +40,7 @@ bool FinalBoss::IsFinalBossBeaten()
 	{
 		
 		tempvalue = (rand() % MAX);
-		cout << "They are about to use: " << "\033[1;33m" << finalBossOptions[tempvalue][0] << "\033[0m" << ". What will you do? Choose an option below: " << endl;
+		cout << "They are about to use: " << finalBossOptions[tempvalue][0] << ". What will you do? Choose an option below: " << endl;
 		DisplayPlayerOptions();
 		input=Validate.inputValidation();
 		while (input > playerOptions.size())
