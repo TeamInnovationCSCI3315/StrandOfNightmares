@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="FinalBoss.h" />
     <ClInclude Include="GameClass.h" />
     <ClInclude Include="InputValidation.h" />
     <ClInclude Include="Inventory.h" />
@@ -147,6 +148,7 @@
     <ClInclude Include="UI.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FinalBoss.cpp" />
     <ClCompile Include="GameClass.cpp" />
     <ClCompile Include="inputvalidation.cpp" />
     <ClCompile Include="Inventory.cpp" />

@@ -29,7 +29,7 @@ public:
 	void LoadGame(Inventory&, Locations&, Locations[],int);
 	void DisplayStartScreen(Inventory&, Locations&, Locations[],int);
 	void DisplayIntroduction();
-	void Menu(Locations[], Locations&, Inventory&, GameClass&, int);
+	void Menu(Locations[], Locations&, Inventory&, GameClass&, int, FinalBoss&);
 	void MoveOptions(Locations[], Locations&, int);
 
 };
