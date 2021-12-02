@@ -138,6 +138,7 @@ void Locations::CheckLocation(Locations TempLocation[], string direction, int si
 	eastDoor = TempLocation[index].getEastDoor();
 	westDoor = TempLocation[index].getWestDoor();
 	LocationInventory.AddItem(TempLocation[index].getItem());
+	roomObject = TempLocation[index].getRoomObject();
 	index = 0;
 
 }
@@ -153,11 +154,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 {
 
 	int playerchoice = 1;
-	if (locationName == "Village Entrance")
-	{
-
-	}
-	else if (locationName == "Abandoned Shack")
+	if (locationName == "Abandoned Shack")
 	{
 		if (playerinventory.SearchInventory("Lantern"))
 		{
@@ -743,7 +740,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 	}
 	else if (locationName == "Castle Throne Room")
 	{
-		if (!taskDone[15])
+		if (!taskDone[19])
 		{
 			cout << "You stand before the castle throne room.\nFrustrated, desperate you approach the throne.\nIt is a gilded majestic sight to behold.\nBut you have no care for these things\nYou want to just have this over.\nYou want to wake up.\nBut I won't let you.";
 			system("pause");
@@ -768,7 +765,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				system("pause");
 				cout << endl << "\033[1;32m" << "You have defeated the boss\n" << "\033[0m";
 				//northDoor = "Wake Up";
-				taskDone[15] = true;
+				taskDone[19] = true;
 			}
 			else
 			{

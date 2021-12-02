@@ -48,7 +48,7 @@ int main()
 	Locations CastleThroneRoom("Castle Throne Room", "You look around at a tranquil throne room, it's throne turned away from you.\nAs you stare at the black and white marble floor, you cleanly see your reflection cleanly bounce off of it.\nThe moonlight glistens across the room as a variety of artifacts lay strewn across it, tools mostly.\nStrangely this room bares a familiar feeling to it you cannot shake.\nYou had to have seen this before.\n", "", "", "", "", "", "");
 
 	Locations PlayerLocation("", "", "", "", "", "", "", "");
-	Locations AllLocations[] = { VillageEntrance , AbandonedShack , Tavern , VillageGarden, Tunnel , MysteriousRoom , LeftTunnelRoom, StaircaseRoom, MysteriousDoor, HillyFields, Cemetary, WindingPath, CastleGate, CastleCourtyard, CastleWaitingRoom, CastleThroneRoom };
+	Locations AllLocations[] = { VillageEntrance , AbandonedShack , Tavern , VillageGarden, Tunnel , MysteriousRoom , LeftTunnelRoom, StaircaseRoom, MysteriousDoor, HillyFields, Cemetary, WindingPath, CastleGate, CastleCourtyard, CastleFoyer, CastleGallery, CastleHall, CastleKitchen, CastleThroneRoom };
 	const int AllLocationsSize = 19;
 	
 	// Player starts at Village Entrance, so their initial location is Village Entrance;
@@ -63,7 +63,7 @@ int main()
 	*/
 	UI Interface;
 	PlayerClass Player();
-		cout << "Game Version 0.4 Save Edition" << endl;
+		cout << "Game Version 0.5" << endl;
 		// Display Start Screen
 		Interface.DisplayStartScreen(PlayerInventory, PlayerLocation,AllLocations,AllLocationsSize);
 		// Display Introduction

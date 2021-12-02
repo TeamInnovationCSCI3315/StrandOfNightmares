@@ -16,7 +16,7 @@ string GameClass::UseMenu(Inventory playerInventory, string s)
 	string itemToUse;
 	string usedOn;
 	playerInventory.DisplayInventory();
-	cout << "Select item to use on" << s << endl;
+	cout << "Select item to use on: " << s << endl;
 	int playerchoice = validate.inputValidation();
 	while(playerchoice > playerInventory.GetInventorySize())
 	{
