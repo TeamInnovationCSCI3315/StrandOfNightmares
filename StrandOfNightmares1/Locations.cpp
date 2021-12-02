@@ -13,6 +13,8 @@ using namespace std;
 	Constructors for the location and instances for location description and name, and returns these values.
 	Location Constructor stores Location Name, Description, and Adjacent doors North, South, East, and West, a well as an Item, and an NPC/Object to interact with
 */
+bool trollEating = false;
+
 Locations::Locations(string n, string d, string north, string south, string east, string west, string i,string o)
 {
 	item = i;
@@ -136,12 +138,13 @@ void Locations::CheckLocation(Locations TempLocation[], string direction, int si
 	eastDoor = TempLocation[index].getEastDoor();
 	westDoor = TempLocation[index].getWestDoor();
 	LocationInventory.AddItem(TempLocation[index].getItem());
+	roomObject = TempLocation[index].getRoomObject();
 	index = 0;
 
 }
 /*
 LocationActions displays different actions specific to every room
-If(locationName == "Room"
+If(locationName == "Room")
 {
 Do this:
 }
@@ -149,12 +152,8 @@ Do this:
 */
 void Locations::LocationActions(Locations TempLocation[], Inventory& playerinventory, int locationsize, FinalBoss& GameOver)
 {
-	
+
 	int playerchoice = 1;
-	/*
-	if (locationName == "Village Entrance")
-	{
-	}*/
 	if (locationName == "Abandoned Shack")
 	{
 		if (playerinventory.SearchInventory("Lantern"))
@@ -390,14 +389,6 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			northDoor = "Mysterious Door";
 		}
 	}
-	else if (locationName == "Mysterious Door")
-	{
-
-	}
-	else if (locationName == "Hilly Fields")
-	{
-
-	}
 	else if (locationName == "Cemetary")
 	{
 		GameClass Game;
@@ -485,21 +476,272 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 		}
 	}
 
-	else if (locationName == "Castle Gate")
+	else if (locationName == "Castle Foyer")
 	{
+		
+		while (playerchoice != 4)
+		{
+			if (!taskDone[17])
+			{
+				{
+					cout << "\n[1] Talk to troll \n[2] Inspect chandelier\n[3] Use item\n[4] Leave\n";
+					playerchoice = validate.inputValidation();
+					switch (playerchoice)
+					{
+					case 1:
+					{
+						cout << "You approach the troll with peaceful intentions, but he quickly gets in your face. Pressing his spear across your body, he yells: \n'Oy! I don't know who you are, or how you trekked out this far, but you need to go away. \nNo one should be at this castle. There are forces at work here you cannot understand.\n Although, without people it's kinda hard to get a break to eat around here...'\n The troll continues to ramble about his hunger and trails off, forgetting the conversation he was in.";
+						break;
+					}
+					case 2:
+					{
+						cout << "Taking a closer look at the chandelier, you notice it hangs directly over the bottom of the staircase. \nIf such a thing fell, its sheer size and force could be deadly.";
+						break;
+					}
+					case 3:
+					{
+						GameClass Game;
+						string use = Game.UseMenu(playerinventory, roomObject);
+						if (use == "Lantern")
+						{
+							cout << "The room is already pretty well lit.\n";
+							break;
+						}
+						else if (use == "Sword")
+						{
+							cout << "There's nothing to swing your sword at here. \nAnd that troll looks like it would swiftly end whatever you try to start with it.\n";
+						}
+						else if (use == "Sage")
+						{
+							cout << "Smells nice and fills you with a sense of goodness. But it doesn't do much else right now.\n";
+						}
+						else
+						{
+							cout << "Nothing Happens\n";
+						}
+						break;
+					}
+					case 4:
+					{
+						break;
+					}
+					default:
+						cout << "Invalid";
+						break;
+					}
+				}
+			}
+			if (taskDone[17])
+			{
+				if (!taskDone[14])
+				{
+					cout << "\n[1] Talk to troll \n[2] Inspect chandelier\n[3] Use item\n[4] Leave\n";
+					playerchoice = validate.inputValidation();
+					switch (playerchoice)
+					{
+					case 1:
+					{
+						cout << "With the hot soup in hand, you try to bribe the troll. This is unsuccessful.\n Looking just as surprised as the first time he saw you, he questions why you're still loitering but dismisses you before you can answer.\n It seems like his attention span isn't all that great.\n";
+						break;
+					}
+					case 2:
+					{
+						cout << "Taking a closer look at the chandelier, you notice it hangs directly over the bottom of the staircase. \nIf such a thing fell, its sheer size and force could be deadly.";
+						break;
+					}
+					case 3:
+					{
+						GameClass Game;
+						string use = Game.UseMenu(playerinventory, roomObject);
+						if (use == "Soup")
+						{
+							cout << "You place the bowl soup at the bottom of the stairs and walk just out of view.\n It's not long before the troll catches a whiff and runs down the stairs to it. He digs his face in ravenously. \nHe is too engaged with eating to notice anything going on around him.\n";
+							taskDone[14] = true;
+							trollEating = true;
+							playerinventory.RemoveItem("Soup");
+							break;
+						}
+						else if (use == "Sword")
+						{
+							cout << "There's nothing to swing your sword at here. \nAnd that troll looks like it would swiftly end whatever you try to start with it.\n";
+						}
+						else if (use == "Sage")
+						{
+							cout << "Smells nice and fills you with a sense of goodness. But it doesn't do much else right now.\n";
+						}
+						else if (use == "Lantern")
+						{
+							cout << "The room is just as well lit as it was earlier.\n";
+						}
+						else
+						{
+							cout << "Nothing Happens\n";
+						}
+						break;
+					}
+					default:
+						cout << "Invalid";
+						break;
+					}
+				}
+				else if (trollEating == true)
+				{
+					if (!taskDone[15])
+					{
+						cout << "[1] Talk to troll \n[2] Inspect chandelier \n[3] Use item \n[4] Leave\n";
+						playerchoice = validate.inputValidation();
+						switch (playerchoice)
+						{
+						case 1:
+						{
+							cout << "The troll is busy stuffing his face. He barely realizes that you are next to him. \n";
+							break;
+						}
+						case 2:
+						{
+							cout << "The chandelier is hanging exactly where it was earlier. The troll is standing underneath it licking the soup bowl inside and out.\n";
+							break;
+						}
+						case 3:
+						{
+							GameClass Game;
+							string use = Game.UseMenu(playerinventory, roomObject);
+							if (use == "Lantern")
+							{
+								cout << "With the troll gorging himself, you quietly make your way over to the nearby rope connected to the chandelier. \nYou open your lantern and watch as the fire slowly climbs up the fibers of the rope. \n\033[1;31mThe final support snaps and the light fixture comes crashing down on the troll with a massive thud, painting the surrounding walls with his insides.\033[0m\n The force was so strong it shook loose the door to the throne room, revealing the entrance.\n";
+								northDoor = "Castle Throne Room";
+								taskDone[15] = true;
+								break;
+							}
+							else if (use == "Sword")
+							{
+								cout << "The chandelier is sitting at a height that you couldn't possibly reach with your sword. \nYou consider hitting the troll, but without he's moving around too much to get a worthwhile hit. Anything you do would probably just anger him.\n";
+							}
+							else if (use == "Sage")
+							{
+								cout << "Smells nice and fills you with a sense of goodness. But it doesn't do much else right now.\n";
+							}
+							else
+							{
+								cout << "Nothing Happens\n";
+							}
+							break;
+						}
+						default:
+							cout << "Invalid\n\n";
+							break;
+						}
+					}
+					else if (taskDone[15])
+					{
+						cout << "\n\n[1] Admire gore \n[2] Inspect shattered chandelier \n[3] Use item \n[4] Leave\n";
+						playerchoice = validate.inputValidation();
+						switch (playerchoice)
+						{
+						case 1:
+						{
+							cout << "There is an unholy amount of blood everywhere. You are in shock at the sight of it all.\n";
+							break;
+						}
+						case 2:
+						{
+							cout << " All that is left is a pile of broken, twinkling crystal glass.\n";
+							break;
+						}
+						case 3:
+						{
+							cout << "You've already done enough damage in this room. \nSave your items for whatever lies through the door to the throne room.";
+							break;
+						}
+						default:
+							cout << "Invalid\n\n";
+							break;
+						}
 
+					}
+				}
+			}
+		}
 	}
-	else if (locationName == "Castle Courtyard")
-	{
 
+	else if (locationName == "Castle Kitchen")
+	{
+	while (playerchoice != 3)
+	{
+		if (!taskDone[17])
+		{
+
+			cout << "\n[1] Inspect stove \n[2] Use item\n[3] Leave\n";
+			playerchoice = validate.inputValidation();
+			switch (playerchoice)
+			{
+			case 1:
+			{
+				cout << "You peer into the pot on the stove.\nUsing the light from your lantern, you identify a hearty stew.\nIt doesn't look that old.\nHungry from your journey, you try to turn it on. \nThere is no electrical power, but you hear the hiss of gas.\n";
+				break;
+			}
+			case 2:
+			{
+				GameClass Game;
+				string use = Game.UseMenu(playerinventory, roomObject);
+				if (use == "Lantern")
+				{
+					cout << "You open your lantern and slowly move it close to the stove. \nAll of a sudden, the fire catches the gas and huge flame erupts! \nYou duck as quickly as you can to avoid the fireball, and upon standing back up, you see a bubbling pot of \033[1;32msoup.\033[0m\n You procure a nearby bowl and ladle and serve yourself, but there's no time to eat just yet!";
+					taskDone[17] = true;
+					playerinventory.AddItem("Soup");
+					break;
+				}
+				else if (use == "Sword")
+				{
+					cout << "Now you have a sword with soup dripping off the end. You're making a mess of the kitchen.\n";
+				}
+				else if (use == "Sage")
+				{
+					cout << "This soup smells like it has more than enough seasoning.\n";
+				}
+				else
+				{
+					cout << "Nothing Happens\n";
+				}
+				break;
+			}
+			default:
+				cout << "Invalid";
+				break;
+			}
+		}
+		else if (taskDone[17])
+		{
+			cout << "\n\n[3] Leave\n";
+			playerchoice = validate.inputValidation();
+			switch (playerchoice)
+			{
+			case 1:
+			{
+				cout << "Invalid\n\n";
+				break;
+			}
+			case 2:
+			{
+				cout << "Invalid\n\n";
+				break;
+			}
+			case 3:
+			{
+				break;
+			}
+			default:
+				cout << "Invalid\n\n";
+				break;
+			}
+
+		}
 	}
-	else if (locationName == "Castle Waiting Room")
-	{
-
+		
 	}
 	else if (locationName == "Castle Throne Room")
 	{
-		if (!taskDone[15])
+		if (!taskDone[19])
 		{
 			cout << "You stand before the castle throne room.\nFrustrated, desperate you approach the throne.\nIt is a gilded majestic sight to behold.\nBut you have no care for these things\nYou want to just have this over.\nYou want to wake up.\nBut I won't let you.";
 			system("pause");
@@ -524,7 +766,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 				system("pause");
 				cout << endl << "\033[1;32m" << "You have defeated the boss\n" << "\033[0m";
 				//northDoor = "Wake Up";
-				taskDone[15] = true;
+				taskDone[19] = true;
 			}
 			else
 			{
@@ -543,10 +785,7 @@ void Locations::LocationActions(Locations TempLocation[], Inventory& playerinven
 			system("CLS");
 			GameOver.setGameOver(true);
 		}
-
 	}
-
-		
 
 	else
 	{
@@ -678,6 +917,59 @@ void Locations::LocationLook(Locations TempLocation[], Inventory& playerinventor
 			locationDesc = "You keep walking forward, but the fog becomes too much for you to handle, you're certain that there has to be another way through the fog. You luckily still know the way back.\n";
 			cout << locationDesc;
 		}
+	}
+  else if (locationName == "Castle Gate")
+	{
+		cout << locationDesc;
+	}
+	else if (locationName == "Castle Courtyard")
+	{
+		cout << locationDesc;
+	}
+	else if (locationName == "Castle Foyer")
+	{
+		if (!taskDone[17])
+		{
+			{
+				cout << locationDesc;
+			}
+		}
+		if (taskDone[17])
+		{
+			if (!taskDone[14])
+			{
+				cout << locationDesc;
+			}
+			else if (trollEating == true)
+			{
+				if (!taskDone[15])
+				{
+					locationDesc = "You enter the waiting room of the castle.\nIt is warm, everywhere has been uncomfortably chilly.\nOr they made your spine shiver at least.\nWhy not this place?\nYou find no obvious gateway to the throne room.\nThere are, however, doorways to your left and right. The troll is at the bottom of the stairs, eating as though he hadn't in years.\n Above the staircase hangs a gigantic, precarious chandelier.\nFollowing the top of the fixture, you see a rope that follows the slant of the ceiling and hangs along the wall. \n";
+					cout << locationDesc;
+				}
+				else if (taskDone[15])
+				{
+					locationDesc = "The walls are dripping with hot, bubbling red liquid.\n The troll's body has been spread out across the room in a waythat you can't tell what chunks came from where. Broken glass is everywhere at your feet.\n";
+					cout << locationDesc;
+				}
+			}
+		}
+	}
+	else if (locationName == "Castle Gallery")
+	{
+		cout << locationDesc;
+	}	
+	else if (locationName == "Castle Hall")
+	{
+		cout << locationDesc;
+	}
+	else if (locationName == "Castle Kitchen")
+	{
+		if (playerinventory.SearchInventory("Soup"))
+		{
+			locationDesc = "You are in a large stone kitchen. \nA pleasant heat radiates from every brick in the wall.\n";
+		}
+		cout << locationDesc;
 	}
 	else
 	{

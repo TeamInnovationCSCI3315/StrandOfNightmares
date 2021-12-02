@@ -115,3 +115,7 @@ int Inventory::GetInventorySize()
 {
 	return inventory.size();
 }
+void Inventory::RemoveItem(string i)
+{
+	inventory.erase(find(inventory.begin(), inventory.end(), i));
+}
