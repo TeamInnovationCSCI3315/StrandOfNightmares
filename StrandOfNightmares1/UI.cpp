@@ -20,11 +20,11 @@ PlayerClass player1;
 void UI::DisplayStartScreen(Inventory& playerInventory, Locations& playerLocation, Locations AllLocations[], int AllLocationsSize)
 {
 	GameClass Game;
-	cout << "-----------------------A Strand of Nightmares--------------------------" << endl;
-	cout << "                   | |--|                       |--| |                 " << endl << "                   |-|  |-----------------------|  |-|" << endl << "                   | |  |                       |  | |                 " << endl;
-	cout << "------------------(Press 1 to Start the Nightmare)---------------------"<<endl;
-	cout << "-----------------(Press 2 to Continue the Nightmare)-------------------" << endl;
-	cout << "---------------(Press Anything Else to End the Dream)------------------" << endl;
+	cout << "\033[1;33m--------------------------\033[0m\033[1;31mA Strand of Nightmares\033[0m\033[1;33m-----------------------\033[0m" << endl;
+	cout << "                   \033[1;31m|\033[0m \033[1;34m|-\033[1;31m-\033[0m\033[1;34m|\033[0m                       \033[1;31m|\033[0m\033[1;34m-\033[0m\033[1;31m-\033[0m\033[1;31m|\033[0m \033[1;34m|\033[0m                 " << endl << "                   \033[1;31m|\033[0m\033[1;34m-|  |\033[0m\033[1;33m-----------------------\033[0m\033[1;31m|\033[0m  \033[1;31m|\033[0m\033[1;34m-|\033[0m" << endl << "                   \033[1;33m| |  |                       |  | |\033[0m                 " << endl;
+	cout << "\033[1;33m------------------(Press 1 to Start the Nightmare)---------------------\033[0m"<<endl;
+	cout << "\033[1;31m-----------------(Press 2 to Continue the Nightmare)-------------------\033[0m" << endl;
+	cout << "\033[1;34m---------------(Press Anything Else to End the Dream)------------------\033[0m" << endl;
 	string playerinputst = "";
 	cin >> playerinputst;
 		if (playerinputst == "1")
@@ -56,8 +56,8 @@ void UI::DisplayIntroduction()
 		 << "You'll learn more of what I mean in due time " << player1.getName() << " all in due time.\n";
 	system("pause");
 	cout << "I will be your guide through this bridge, think of me as your deep concious, in a way I am that.\n"
-		 << "Your goal as you know it is to find a way to wake up, to return to reality in the only way you know that is to dive into the dream.\n"
-	     << "I wish you the best of luck, I know you can navigate the knots of this world, you'll find them, they pull you to them.\n I shall be seeing you very soon.\n";
+		 << "Your goal as you know it is to find a way to wake up."<<endl<<"To return to reality in the only way you know that is to dive into the dream.\n"
+	     << "I wish you the best of luck, I know you can navigate the knots of this world, you'll find them, they pull you to them.\nI shall be seeing you very soon.\n";
 	system("pause");
 	system("CLS");
 }
@@ -71,7 +71,7 @@ Displays the user interface for the game as a whole. Player can:
 void UI::Menu(Locations AllLocations[], Locations& PlayerLocation, Inventory& PlayerInventory, GameClass& Game, int AllLocationsSize, FinalBoss& Final)
 {
 	cout << "--------------------------------------------------------------------------" << endl;
-	cout << "You are currently at: " << PlayerLocation.getLocationName() << endl;
+	cout << "You are currently at: \033[1;34m" << PlayerLocation.getLocationName() << "\033[0m" << endl;
 	cout << "--------------------------------------------------------------------------" << endl;
 	cout << "[1] Interact\n" << "[2] Move\n" << "[3] Inventory \n" << "[4] Look \n" << "[5] Save Game \n" << "[0] Quit Game\n";
 	cout << "--------------------------------------------------------------------------" << endl;
@@ -111,7 +111,8 @@ Switch Statement to move between:
 */
 void UI::MoveOptions(Locations AllLocations[], Locations& PlayerLocation, int AllLocationsSize)
 {
-	cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << endl << endl;
+	cout << "\033[1;34m";
+	cout << "\t [1] North: " << PlayerLocation.getNorthDoor() << endl << "\t [2] South: " << PlayerLocation.getSouthDoor() << endl << "\t [3] East: " << PlayerLocation.getEastDoor() << endl << "\t [4] West: " << PlayerLocation.getWestDoor() << "\033[0m" << endl << endl;
 	int playerChoice;
 	playerInput = validate.inputValidation();
 	switch (playerInput)

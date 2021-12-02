@@ -32,7 +32,7 @@ bool FinalBoss::IsFinalBossBeaten()
 {
 	
 	int input;
-	int MAX = 4;
+	int MAX = 6;
 	srand(time(0));
 	int tempvalue;
 	int i = 0;

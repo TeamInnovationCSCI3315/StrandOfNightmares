@@ -64,7 +64,7 @@ void Inventory::RemoveAllItems()
 void Inventory::DisplayInventory()
 {
 	int e=0;
-	cout << endl << "Inventory: " << endl;
+	cout << endl << "\033[1;33mInventory: " << endl;
 	cout << "--------------------" << endl;
 
 	// loop through all items in inventory
@@ -84,7 +84,7 @@ void Inventory::DisplayInventory()
 		cout << "INVENTORY IS EMPTY";
 	}
 	cout << endl << "--------------------" << endl << endl;
-
+	cout << "\033[0m";
 }
 bool Inventory::SearchInventory(string item)
 {
